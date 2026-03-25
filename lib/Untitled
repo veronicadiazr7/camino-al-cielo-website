@@ -1,0 +1,25 @@
+import { EventItem } from "./events"
+
+function formatDate(date: Date, time?: string) {
+  const [hours = "00", minutes = "00"] = time?.split(":") || []
+  const d = new Date(date)
+  d.setHours(Number(hours))
+  d.setMinutes(Number(minutes))
+
+  return d.toISOString().replace(/[-:]/g, "").split(".")[0] + "Z"
+}
+
+export function generateGoogleCalendarLink(event: EventItem) {
+  const start = formatDate(event.date, event.startTime)
+  const end = formatDate(event.date, event.endTime)
+
+  const params = new URLSearchParams({
+    action: "TEMPLATE",
+    text: event.title,
+    dates: `${start}/${end}`,
+    details: event.description || "",
+    location: event.location || "",
+  })
+
+  return `https://www.google.com/calendar/render?${params.toString()}`
+}
