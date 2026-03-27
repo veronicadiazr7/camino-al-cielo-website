@@ -5,7 +5,6 @@ import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuT
 import Link from 'next/link';
 import Image from 'next/image';
 import { Menu, X } from 'lucide-react';
-import logoHorizontal from '@/lib/images/logo-horizontal.png';
 
 
 const navItems = [
@@ -22,16 +21,12 @@ const navItems = [
     href: '/eventos',
   },
   {
-    label: 'Ofrendas',
-    href: '/ofrendas',
-  },
-  {
-    label: 'Contactanos',
-    href: '/contactanos',
-  },
-  {
     label: 'Ministerios',
     href: '/ministerios',
+  },
+  {
+    label: 'Ofrendas',
+    href: '/ofrendas',
   },
 ]
 
@@ -44,7 +39,7 @@ export const NavBar = () => {
     <header className="w-full bg-black">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-8">
         <Link href="/" aria-label="Inicio" onClick={closeMenu}>
-          <Image className="stroke-white" src={logoHorizontal} alt="Casa de Oracion Camino Al Cielo" width={220} />
+          <Image className="stroke-white" src="/images/logo_white.png" alt="Casa de Oracion Camino Al Cielo" width={220} height={74} />
         </Link>
 
         <button
@@ -62,7 +57,7 @@ export const NavBar = () => {
             {navItems.map((item) => (
               <NavigationMenuItem key={item.href}>
                 <NavigationMenuTrigger className="bg-transparent text-white font-bold">
-                  <Link href={item.href}>{item.label}</Link>
+                  <Link className="cursor-pointer" href={item.href}>{item.label}</Link>
                 </NavigationMenuTrigger>
               </NavigationMenuItem>
             ))}
@@ -74,11 +69,11 @@ export const NavBar = () => {
         <nav className="border-t border-white/15 md:hidden" aria-label="Menu movil">
           <ul className="flex flex-col px-4 py-2">
             {navItems.map((item) => (
-              <li key={item.href}>
+              <li className="cursor-pointer" key={item.href}>
                 <Link
                   href={item.href}
                   onClick={closeMenu}
-                  className="block rounded-md px-3 py-2 text-white hover:bg-white/10"
+                  className="block rounded-md px-3 py-2 text-white hover:bg-white/10 cursor-pointer"
                 >
                   {item.label}
                 </Link>

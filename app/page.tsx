@@ -1,6 +1,5 @@
 import { CardSection } from "./components/CardSection";
 import { HeroSlideshow } from "./components/HeroSlideshow";
-import logoMinisterios from "@/lib/images/collage-logo-ministerios.png";
 
 export default function Home() {
   return (
@@ -22,7 +21,7 @@ export default function Home() {
       title: "Ministerios",
       description: "Cada miembro, un propósito en Cristo",
       content: "Encuentra tu lugar para servir",
-      imageSrc: logoMinisterios,
+      imageSrc: "/images/collage-logo-ministerios.png",
       imageAlt: "Ministerios logo",
       imageFit: "contain",
       imagePosition: "left",

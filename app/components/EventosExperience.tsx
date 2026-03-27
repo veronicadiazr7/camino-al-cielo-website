@@ -117,25 +117,25 @@ export function EventosExperience() {
 
       <div className="relative mx-auto flex w-full max-w-7xl flex-col gap-10 px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
         <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
-          <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#1a1a1a] shadow-[0_40px_100px_rgba(0,0,0,0.45)]">
+          <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-[#33266d] shadow-[0_40px_100px_rgba(0,0,0,0.45)]">
             <div className="relative min-h-[340px]">
-              <Image
+              {/* <Image
                 src={featuredEvent?.heroImage ?? heroImage}
                 alt={featuredEvent?.title ?? "Eventos Camino al Cielo"}
                 fill
                 priority
                 className="object-cover"
-              />
+              /> */}
               <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-[#111111]" />
 
               <div className="relative flex min-h-[340px] flex-col justify-end gap-5 p-6 sm:p-8">
                 <div className="space-y-3">
                   <p className="text-[0.65rem] font-semibold uppercase tracking-[0.35em] text-[#d8b46a]">
-                    Sacred Gatherings
+                   Eventos
                   </p>
                   <div className="max-w-xl space-y-3">
                     <h1 className="max-w-md text-4xl font-semibold leading-none sm:text-5xl">
-                      Experience the Divine.
+                      Se parte de nuestras actividades.
                     </h1>
                     <p className="max-w-lg text-sm text-white/70 sm:text-base">
                       Explora nuestro calendario, descubre reuniones importantes y abre cada fecha
@@ -166,7 +166,7 @@ export function EventosExperience() {
                           : "bg-white/[0.08] text-white/70 hover:bg-white/[0.12]"
                       )}
                     >
-                      All Events
+                     Todos los eventos
                     </button>
 
                     {eventCategories.map((category) => (
@@ -190,13 +190,13 @@ export function EventosExperience() {
             </div>
           </div>
 
-          <div className="rounded-[2rem] border border-[#c9a85f]/20 bg-[#171717] p-4 shadow-[0_30px_70px_rgba(0,0,0,0.35)] sm:p-6">
+          <div className="rounded-[2rem] border border-[#c9a85f]/20 bg-[#33266de2] p-4 shadow-[0_30px_70px_rgba(0,0,0,0.35)] sm:p-6">
             <div className="mb-4 flex items-center justify-between">
               <div>
                 <p className="text-[0.65rem] font-semibold uppercase tracking-[0.35em] text-[#d8b46a]">
-                  Calendar
+                  Calendario
                 </p>
-                <h2 className="mt-2 text-2xl font-semibold">Browse upcoming dates</h2>
+                <h2 className="mt-2 text-2xl font-semibold">Descubre nuestros próximos eventos</h2>
               </div>
               <CalendarDays className="size-5 text-[#d8b46a]" />
             </div>
@@ -213,7 +213,7 @@ export function EventosExperience() {
                 month: "w-full space-y-5",
                 month_caption: "relative flex h-10 items-center justify-center",
                 caption_label: "text-lg font-semibold text-white",
-                nav: "absolute inset-x-0 top-0 flex items-center justify-between",
+                nav: "relative inset-x-0 top-0 flex items-center justify-between",
                 button_previous:
                   "h-9 w-9 rounded-full border border-white/10 bg-white/[0.05] text-white hover:bg-white/10",
                 button_next:
@@ -235,7 +235,7 @@ export function EventosExperience() {
 
             <div className="mt-5 rounded-[1.5rem] border border-white/8 bg-white/[0.03] p-4">
               <p className="text-[0.65rem] font-semibold uppercase tracking-[0.35em] text-[#d8b46a]">
-                Selected date
+                Fecha seleccionada
               </p>
               {selectedDate ? (
                 <div className="mt-3 space-y-3">
@@ -331,7 +331,7 @@ export function EventosExperience() {
                       }}
                       className="mt-auto rounded-full bg-[#c9a85f] px-5 text-[#201704] hover:bg-[#dfbf7c]"
                     >
-                      View details
+                      Más Detalles
                     </Button>
                   </div>
                 </div>
@@ -401,7 +401,7 @@ export function EventosExperience() {
                   rel="noopener noreferrer"
                   className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#c9a85f] px-5 text-sm font-medium text-[#221807] transition hover:bg-[#dfbf7c]"
                 >
-                  Add to Google Calendar
+                 Añade a tu calendario.
                 </a>
                 <a
                   href={buildICSDataUri(activeEvent)}

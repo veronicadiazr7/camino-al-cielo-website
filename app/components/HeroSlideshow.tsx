@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import Image from "next/image";
-import cultoAltisimo from "@/lib/images/CultoAltisimoTV.png";
 
 import {
   type CarouselApi,
@@ -16,7 +15,7 @@ import {
 const slides = [
   {
     title: "Bienvenidos a Casa de Oracion",
-    image: cultoAltisimo,
+    image: "/images/CultoAltisimoTV.png",
   },
   {
     title: "Adoracion y Palabra",

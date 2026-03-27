@@ -1,4 +1,4 @@
-export type EventCategory = "worship" | "ministry" | "community" | "youth"
+export type EventCategory = "jovenes" | "evangelismo" | "servicio" | "niños" | "matrimonios" | "estudios";
 
 export type EventItem = {
   id: string
@@ -17,10 +17,13 @@ export type EventItem = {
 }
 
 export const eventCategories: { value: EventCategory; label: string }[] = [
-  { value: "worship", label: "Worship" },
-  { value: "ministry", label: "Ministry" },
-  { value: "community", label: "Community" },
-  { value: "youth", label: "Youth" },
+  { value: "jovenes", label: "Jóvenes" },
+  { value: "servicio", label: "Servicio" },
+  { value: "evangelismo", label: "Evangelismo" },
+  { value: "niños", label: "Niños" },
+  { value: "matrimonios", label: "Matrimonios" },
+  { value: "estudios", label: "Estudios" },
+
 ]
 
 export const events: EventItem[] = [
@@ -30,11 +33,11 @@ export const events: EventItem[] = [
     date: new Date(2026, 8, 6),
     startTime: "19:00",
     endTime: "21:00",
-    location: "Main Sanctuary",
+    location: "Templo",
     description:
       "Join us for an immersive evening of praise and deep spiritual connection under warm lights, prayer, and live worship.",
-    category: "worship",
-    categoryLabel: "Worship",
+    category: "servicio",
+    categoryLabel: "Servicio",
     ministry: "Casa de Oracion",
     heroImage: "/images/hero-placeholder-2.svg",
     cardImage: "/images/hero-placeholder-2.svg",
@@ -49,8 +52,8 @@ export const events: EventItem[] = [
     location: "Family Life Center",
     description:
       "Empowering the next generation to lead with faith, courage, and divine wisdom through talks, worship, and breakout sessions.",
-    category: "youth",
-    categoryLabel: "Youth",
+    category: "jovenes",
+    categoryLabel: "jovenes",
     ministry: "Generacion de Fuego",
     heroImage: "/images/hero-placeholder-1.svg",
     cardImage: "/images/hero-placeholder-1.svg",
@@ -64,8 +67,8 @@ export const events: EventItem[] = [
     location: "Fellowship Hall",
     description:
       "A morning of intercession, encouragement, and vision casting for ministry leaders and volunteers across the church.",
-    category: "ministry",
-    categoryLabel: "Ministry",
+    category: "servicio",
+    categoryLabel: "Servicio",
     ministry: "Leadership Team",
     heroImage: "/images/hero-placeholder-3.svg",
     cardImage: "/images/hero-placeholder-3.svg",
@@ -79,8 +82,8 @@ export const events: EventItem[] = [
     location: "Community Courtyard",
     description:
       "Bring the whole family for prayer, food, children activities, and practical support for our surrounding community.",
-    category: "community",
-    categoryLabel: "Community",
+    category: "evangelismo",
+    categoryLabel: "evangelismo",
     ministry: "Compasion en Accion",
     heroImage: "/images/hero-placeholder-1.svg",
     cardImage: "/images/hero-placeholder-2.svg",
@@ -94,8 +97,8 @@ export const events: EventItem[] = [
     location: "Upper Room",
     description:
       "A guided workshop focused on spiritual growth, biblical foundations, and practical steps for discipling others well.",
-    category: "ministry",
-    categoryLabel: "Ministry",
+    category: "estudios",
+    categoryLabel: "estudios",
     ministry: "Formacion Biblica",
     heroImage: "/images/hero-placeholder-3.svg",
     cardImage: "/images/hero-placeholder-3.svg",

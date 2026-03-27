@@ -1,5 +1,4 @@
 import Image from "next/image";
-import type { StaticImageData } from "next/image";
 import { cn } from "@/lib/utils";
 import {
   Card,
@@ -14,7 +13,7 @@ type CardSectionItem = {
   title?: string;
   description?: string;
   content?: string;
-  imageSrc: string | StaticImageData;
+  imageSrc: string;
   imageAlt: string;
   imagePosition?: "left" | "right";
   ctaLabel?: string;
