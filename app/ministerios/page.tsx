@@ -1,7 +1,7 @@
 import { ArrowRight, HeartHandshake, Music4, Sparkles, Users } from "lucide-react";
 
 import { HeroSlideshow } from "../components/HeroSlideshow";
-import { MinistryShowcaseCarousel } from "../components/MinistryShowcaseCarousel";
+import { ImageCard } from "../components/ImageCard";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
 
 const ministries = [
@@ -13,6 +13,11 @@ const ministries = [
     imageSrc: "/images/hero-placeholder-1.svg",
     imageAlt: "Children ministry",
     href: "#children",
+    imageSlides: [
+      { src: "/images/hero-placeholder-1.svg", alt: "Ministerio de Ninos slide 1" },
+      { src: "/images/hero-placeholder-2.svg", alt: "Ministerio de Ninos slide 2" },
+      { src: "/images/hero-placeholder-3.svg", alt: "Ministerio de Ninos slide 3" },
+    ],
   },
   {
     id: "youth",
@@ -22,6 +27,11 @@ const ministries = [
     imageSrc: "/images/hero-placeholder-2.svg",
     imageAlt: "Youth ministry",
     href: "#youth",
+    imageSlides: [
+      { src: "/images/hero-placeholder-2.svg", alt: "Generacion Que ARDE slide 1" },
+      { src: "/images/CultoAltisimoTV.png", alt: "Generacion Que ARDE slide 2" },
+      { src: "/images/hero-placeholder-3.svg", alt: "Generacion Que ARDE slide 3" },
+    ],
   },
   {
     id: "families",
@@ -31,6 +41,11 @@ const ministries = [
     imageSrc: "/images/hero-placeholder-3.svg",
     imageAlt: "Family ministry",
     href: "#families",
+    imageSlides: [
+      { src: "/images/hero-placeholder-3.svg", alt: "Matrimonios slide 1" },
+      { src: "/images/hero-placeholder-1.svg", alt: "Matrimonios slide 2" },
+      { src: "/images/CultoAltisimoTV.png", alt: "Matrimonios slide 3" },
+    ],
   },
   {
     id: "worship",
@@ -41,6 +56,11 @@ const ministries = [
     imageAlt: "Worship ministry",
     href: "#worship",
     imageClassName: "bg-[#d4d1df]",
+    imageSlides: [
+      { src: "/images/CultoAltisimoTV.png", alt: "Adoracion slide 1" },
+      { src: "/images/hero-placeholder-2.svg", alt: "Adoracion slide 2" },
+      { src: "/images/hero-placeholder-1.svg", alt: "Adoracion slide 3" },
+    ],
   },
 ];
 
@@ -146,7 +166,13 @@ export default function MinisteriosPage() {
             </p>
           </div>
 
-          <MinistryShowcaseCarousel slides={ministries} />
+          <div className="grid gap-6 md:grid-cols-2">
+            {ministries.map((ministry) => (
+              <div id={ministry.id} key={ministry.id}>
+                <ImageCard {...ministry} />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
