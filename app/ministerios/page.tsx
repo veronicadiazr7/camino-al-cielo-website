@@ -1,7 +1,7 @@
 import { ArrowRight, HeartHandshake, Music4, Sparkles, Users } from "lucide-react";
 
 import { HeroSlideshow } from "../components/HeroSlideshow";
-import { ImageCard } from "../components/ImageCard";
+import { MinistryShowcaseCarousel } from "../components/MinistryShowcaseCarousel";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
 
 const ministries = [
@@ -146,13 +146,7 @@ export default function MinisteriosPage() {
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2">
-            {ministries.map((ministry) => (
-              <div id={ministry.id} key={ministry.id}>
-                <ImageCard {...ministry} />
-              </div>
-            ))}
-          </div>
+          <MinistryShowcaseCarousel slides={ministries} />
         </div>
       </section>
 
