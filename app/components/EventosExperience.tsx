@@ -19,7 +19,12 @@ import { Calendar, CalendarDayButton } from "@/components/ui/calendar"
 import { cn } from "@/lib/utils"
 import { buildICSDataUri } from "@/lib/generateICSLink"
 import { generateGoogleCalendarLink } from "@/lib/generateGoogleCalendarLink"
-import { eventCategories, events, type EventCategory, type EventItem } from "@/lib/events"
+import {
+  eventCategories,
+  events as fallbackEvents,
+  type EventCategory,
+  type EventItem,
+} from "@/lib/events"
 
 const heroImage = "/images/hero-placeholder-2.svg"
 
@@ -34,7 +39,11 @@ function getEventsForDate(date: Date | undefined, items: EventItem[]) {
   return items.filter((event) => isSameDay(event.date, date))
 }
 
-export function EventosExperience() {
+type EventosExperienceProps = {
+  events?: EventItem[]
+}
+
+export function EventosExperience({ events = fallbackEvents }: EventosExperienceProps) {
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(events[0]?.date)
   const [activeCategory, setActiveCategory] = useState<EventCategory | "all">("all")
   const [search, setSearch] = useState("")
@@ -190,7 +199,7 @@ export function EventosExperience() {
             </div>
           </div>
 
-          <div className="rounded-[2rem] border border-[#c9a85f]/20 bg-[#33266de2] p-4 shadow-[0_30px_70px_rgba(0,0,0,0.35)] sm:p-6">
+          <div className="rounded-[2rem] border border-secondary-500/20 bg-tertiary-800/90 p-4 shadow-[0_30px_70px_rgba(0,0,0,0.35)] sm:p-6">
             <div className="mb-4 flex items-center justify-between">
               <div>
                 <p className="text-[0.65rem] font-semibold uppercase tracking-[0.35em] text-[#d8b46a]">
@@ -329,7 +338,7 @@ export function EventosExperience() {
                         setSelectedDate(event.date)
                         setActiveEvent(event)
                       }}
-                      className="mt-auto rounded-full bg-[#c9a85f] px-5 text-[#201704] hover:bg-[#dfbf7c]"
+                      className="mt-auto rounded-full bg-secondary-500 px-5 text-secondary-900 hover:bg-secondary-300"
                     >
                       Más Detalles
                     </Button>
@@ -399,7 +408,7 @@ export function EventosExperience() {
                   href={generateGoogleCalendarLink(activeEvent)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-11 items-center justify-center rounded-full bg-[#c9a85f] px-5 text-sm font-medium text-[#221807] transition hover:bg-[#dfbf7c]"
+                  className="inline-flex min-h-11 items-center justify-center rounded-full bg-secondary-500 px-5 text-sm font-medium text-secondary-900 transition hover:bg-secondary-300"
                 >
                  Añade a tu calendario.
                 </a>

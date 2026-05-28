@@ -1,4 +1,10 @@
-export type EventCategory = "jovenes" | "evangelismo" | "servicio" | "niños" | "matrimonios" | "estudios";
+export type EventCategory =
+  | "jovenes"
+  | "evangelismo"
+  | "servicio"
+  | "ninos"
+  | "matrimonios"
+  | "estudios"
 
 export type EventItem = {
   id: string
@@ -20,7 +26,7 @@ export const eventCategories: { value: EventCategory; label: string }[] = [
   { value: "jovenes", label: "Jóvenes" },
   { value: "servicio", label: "Servicio" },
   { value: "evangelismo", label: "Evangelismo" },
-  { value: "niños", label: "Niños" },
+  { value: "ninos", label: "Niños" },
   { value: "matrimonios", label: "Matrimonios" },
   { value: "estudios", label: "Estudios" },
 
