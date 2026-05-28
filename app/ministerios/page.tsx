@@ -3,66 +3,7 @@ import { ArrowRight, HeartHandshake, Music4, Sparkles, Users } from "lucide-reac
 import { HeroSlideshow } from "../components/HeroSlideshow";
 import { ImageCard } from "../components/ImageCard";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
-
-const ministries = [
-  {
-    id: "niños",
-    title: "Ministerio de Niños",
-    description:
-      "Building a foundation of faith through play, stories, and discovery for our youngest members.",
-    imageSrc: "/images/hero-placeholder-1.svg",
-    imageAlt: "Children ministry",
-    href: "#children",
-    imageSlides: [
-      { src: "/images/hero-placeholder-1.svg", alt: "Ministerio de Ninos slide 1" },
-      { src: "/images/hero-placeholder-2.svg", alt: "Ministerio de Ninos slide 2" },
-      { src: "/images/hero-placeholder-3.svg", alt: "Ministerio de Ninos slide 3" },
-    ],
-  },
-  {
-    id: "youth",
-    title: "Generación Que ARDE",
-    description:
-      "Ministerio de Jóvenes ",
-    imageSrc: "/images/hero-placeholder-2.svg",
-    imageAlt: "Youth ministry",
-    href: "#youth",
-    imageSlides: [
-      { src: "/images/hero-placeholder-2.svg", alt: "Generacion Que ARDE slide 1" },
-      { src: "/images/CultoAltisimoTV.png", alt: "Generacion Que ARDE slide 2" },
-      { src: "/images/hero-placeholder-3.svg", alt: "Generacion Que ARDE slide 3" },
-    ],
-  },
-  {
-    id: "families",
-    title: "Matrimonios",
-    description:
-      "Creating space for parents and families to pray, learn, and serve together through every season of life.",
-    imageSrc: "/images/hero-placeholder-3.svg",
-    imageAlt: "Family ministry",
-    href: "#families",
-    imageSlides: [
-      { src: "/images/hero-placeholder-3.svg", alt: "Matrimonios slide 1" },
-      { src: "/images/hero-placeholder-1.svg", alt: "Matrimonios slide 2" },
-      { src: "/images/CultoAltisimoTV.png", alt: "Matrimonios slide 3" },
-    ],
-  },
-  {
-    id: "worship",
-    title: "Adoración",
-    description:
-      "A ministry for musicians, vocalists, and creatives who want to lead the church in heartfelt worship.",
-    imageSrc: "/images/CultoAltisimoTV.png",
-    imageAlt: "Worship ministry",
-    href: "#worship",
-    imageClassName: "bg-[#d4d1df]",
-    imageSlides: [
-      { src: "/images/CultoAltisimoTV.png", alt: "Adoracion slide 1" },
-      { src: "/images/hero-placeholder-2.svg", alt: "Adoracion slide 2" },
-      { src: "/images/hero-placeholder-1.svg", alt: "Adoracion slide 3" },
-    ],
-  },
-];
+import { ministries } from "./data";
 
 const connectionSteps = [
   {

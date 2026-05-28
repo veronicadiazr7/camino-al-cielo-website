@@ -25,6 +25,7 @@ import {
 } from "./ui/card";
 
 type ImageCardProps = {
+  eyebrow?: string;
   title: string;
   description: string;
   imageSrc: string | StaticImageData;
@@ -43,6 +44,7 @@ type ImageCardProps = {
 };
 
 export function ImageCard({
+  eyebrow,
   title,
   description,
   imageSrc,
@@ -135,6 +137,11 @@ export function ImageCard({
 
       <div className={cn("flex flex-1 flex-col", contentClassName)}>
         <CardHeader className="px-0 pt-0">
+          {eyebrow ? (
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary-500">
+              {eyebrow}
+            </p>
+          ) : null}
           <CardTitle
             className={cn(
               "text-3xl font-semibold tracking-[-0.03em] text-primary-700",
@@ -145,7 +152,7 @@ export function ImageCard({
           </CardTitle>
           <CardDescription
             className={cn(
-              "max-w-[24ch] text-lg leading-8 text-secondary-700",
+              "text-lg leading-8 text-secondary-700",
               descriptionClassName
             )}
           >

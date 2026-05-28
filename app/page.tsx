@@ -28,7 +28,7 @@ export default function Home() {
       ctaLabel: "Ver Más",
       ctaHref: "/ministerios",
       backgroundColor:"bg-white",
-      titleColor: "text-[#c9a85f]",
+      titleColor: "text-secondary-500",
       contentColor: "text-secondary-500",
       descriptionColor: "text-secondary-500",
     },
