@@ -96,7 +96,7 @@ export const CardSection = ({ items = defaultItems }: CardSectionProps) => {
               <div className="flex h-full flex-col justify-center p-6 sm:p-8 md:p-10">
                 <CardHeader className="px-0">
                   {item.eyebrow ? (
-                    <p className="text-xs uppercase tracking-[0.2em] text-[#c9a85f]">
+                    <p className="text-xs uppercase tracking-[0.2em] text-secondary-500">
                       {item.eyebrow}
                     </p>
                   ) : null}
@@ -112,7 +112,7 @@ export const CardSection = ({ items = defaultItems }: CardSectionProps) => {
                   {item.ctaLabel ? (
                     <a
                       href={item.ctaHref ?? "#"}
-                      className="mt-6 inline-block text-sm font-semibold uppercase tracking-wide text-[#c9a85f] hover:text-[#e3c98f]"
+                      className="mt-6 inline-block text-sm font-semibold uppercase tracking-wide text-secondary-500 hover:text-secondary-300"
                     >
                       {item.ctaLabel} →
                     </a>

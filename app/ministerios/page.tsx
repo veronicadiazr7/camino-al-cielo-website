@@ -3,46 +3,7 @@ import { ArrowRight, HeartHandshake, Music4, Sparkles, Users } from "lucide-reac
 import { HeroSlideshow } from "../components/HeroSlideshow";
 import { ImageCard } from "../components/ImageCard";
 import { Card, CardContent, CardHeader, CardTitle } from "../components/ui/card";
-
-const ministries = [
-  {
-    id: "niños",
-    title: "Ministerio de Niños",
-    description:
-      "Building a foundation of faith through play, stories, and discovery for our youngest members.",
-    imageSrc: "/images/hero-placeholder-1.svg",
-    imageAlt: "Children ministry",
-    href: "#children",
-  },
-  {
-    id: "youth",
-    title: "Generación Que ARDE",
-    description:
-      "Ministerio de Jóvenes ",
-    imageSrc: "/images/hero-placeholder-2.svg",
-    imageAlt: "Youth ministry",
-    href: "#youth",
-  },
-  {
-    id: "families",
-    title: "Matrimonios",
-    description:
-      "Creating space for parents and families to pray, learn, and serve together through every season of life.",
-    imageSrc: "/images/hero-placeholder-3.svg",
-    imageAlt: "Family ministry",
-    href: "#families",
-  },
-  {
-    id: "worship",
-    title: "Adoración",
-    description:
-      "A ministry for musicians, vocalists, and creatives who want to lead the church in heartfelt worship.",
-    imageSrc: "/images/CultoAltisimoTV.png",
-    imageAlt: "Worship ministry",
-    href: "#worship",
-    imageClassName: "bg-[#d4d1df]",
-  },
-];
+import { ministries } from "./data";
 
 const connectionSteps = [
   {
