@@ -2,12 +2,78 @@ import {CalendarIcon} from "@sanity/icons"
 import {defineField, defineType} from "sanity"
 
 const eventCategories = [
-  {title: "Jovenes", value: "jovenes"},
+  {title: "Jóvenes", value: "jovenes"},
   {title: "Evangelismo", value: "evangelismo"},
   {title: "Servicio", value: "servicio"},
-  {title: "Ninos", value: "ninos"},
+  {title: "Niños", value: "ninos"},
   {title: "Matrimonios", value: "matrimonios"},
   {title: "Estudios", value: "estudios"},
+  {title: "Congreso", value: "congreso"},
+  {title: "Damas", value: "damas"},
+  {title: "Caballeros", value: "caballeros"},
+]
+
+const ministries = [
+  {title: "Ministerio de Niños", value: "Ministerio de Ninos"},
+  {title: "Generación Que Arde", value: "Generacion Que Arde"},
+  {title: "Semillas Que Arden", value: "Generacion Que Arden"},
+  {title: "Las que no retroceden", value: "Las que no retroceden" }
+  {title: "Hombres de Valor", value: "Hombres de Valor" }
+  {title: "Matrimonios", value: "Matrimonios"},
+  {title: "Adoración", value: "Adoracion"},
+  {title: "Kit Dorado", value: "Kit Dorado" },
+  {title: "Misiones", value: "Misiones" },
+]
+
+const timeOptions = [
+  {title: "12:00 AM", value: "00:00"},
+  {title: "12:30 AM", value: "00:30"},
+  {title: "1:00 AM", value: "01:00"},
+  {title: "1:30 AM", value: "01:30"},
+  {title: "2:00 AM", value: "02:00"},
+  {title: "2:30 AM", value: "02:30"},
+  {title: "3:00 AM", value: "03:00"},
+  {title: "3:30 AM", value: "03:30"},
+  {title: "4:00 AM", value: "04:00"},
+  {title: "4:30 AM", value: "04:30"},
+  {title: "5:00 AM", value: "05:00"},
+  {title: "5:30 AM", value: "05:30"},
+  {title: "6:00 AM", value: "06:00"},
+  {title: "6:30 AM", value: "06:30"},
+  {title: "7:00 AM", value: "07:00"},
+  {title: "7:30 AM", value: "07:30"},
+  {title: "8:00 AM", value: "08:00"},
+  {title: "8:30 AM", value: "08:30"},
+  {title: "9:00 AM", value: "09:00"},
+  {title: "9:30 AM", value: "09:30"},
+  {title: "10:00 AM", value: "10:00"},
+  {title: "10:30 AM", value: "10:30"},
+  {title: "11:00 AM", value: "11:00"},
+  {title: "11:30 AM", value: "11:30"},
+  {title: "12:00 PM", value: "12:00"},
+  {title: "12:30 PM", value: "12:30"},
+  {title: "1:00 PM", value: "13:00"},
+  {title: "1:30 PM", value: "13:30"},
+  {title: "2:00 PM", value: "14:00"},
+  {title: "2:30 PM", value: "14:30"},
+  {title: "3:00 PM", value: "15:00"},
+  {title: "3:30 PM", value: "15:30"},
+  {title: "4:00 PM", value: "16:00"},
+  {title: "4:30 PM", value: "16:30"},
+  {title: "5:00 PM", value: "17:00"},
+  {title: "5:30 PM", value: "17:30"},
+  {title: "6:00 PM", value: "18:00"},
+  {title: "6:30 PM", value: "18:30"},
+  {title: "7:00 PM", value: "19:00"},
+  {title: "7:30 PM", value: "19:30"},
+  {title: "8:00 PM", value: "20:00"},
+  {title: "8:30 PM", value: "20:30"},
+  {title: "9:00 PM", value: "21:00"},
+  {title: "9:30 PM", value: "21:30"},
+  {title: "10:00 PM", value: "22:00"},
+  {title: "10:30 PM", value: "22:30"},
+  {title: "11:00 PM", value: "23:00"},
+  {title: "11:30 PM", value: "23:30"},
 ]
 
 export const event = defineType({
@@ -39,13 +105,17 @@ export const event = defineType({
       name: "startTime",
       title: "Hora de comienzo",
       type: "string",
-      description: "Ejemplo: 19:00",
+      options: {
+        list: timeOptions,
+      },
     }),
     defineField({
       name: "endTime",
       title: "Hora de cierre",
       type: "string",
-      description: "Ejemplo: 21:00",
+      options: {
+        list: timeOptions,
+      },
     }),
     defineField({
       name: "location",
@@ -74,6 +144,9 @@ export const event = defineType({
       name: "ministry",
       title: "Ministerio",
       type: "string",
+      options: {
+        list: ministries,
+      },
       validation: (rule) => rule.required(),
     }),
     defineField({

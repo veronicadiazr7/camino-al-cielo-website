@@ -30,8 +30,22 @@ const heroImage = "/images/hero-placeholder-2.svg"
 
 function formatEventTime(event: EventItem) {
   if (!event.startTime && !event.endTime) return "Horario por anunciar"
-  if (event.startTime && event.endTime) return `${event.startTime} - ${event.endTime}`
-  return event.startTime ?? event.endTime ?? "Horario por anunciar"
+  if (event.startTime && event.endTime) {
+    return `${formatClockTime(event.startTime)} - ${formatClockTime(event.endTime)}`
+  }
+  return formatClockTime(event.startTime ?? event.endTime ?? "")
+}
+
+function formatClockTime(time: string) {
+  const match = time.match(/^(\d{1,2}):(\d{2})$/)
+  if (!match) return time || "Horario por anunciar"
+
+  const hours = Number(match[1])
+  const minutes = match[2]
+  const period = hours >= 12 ? "PM" : "AM"
+  const displayHours = hours % 12 || 12
+
+  return `${displayHours}:${minutes} ${period}`
 }
 
 function getEventsForDate(date: Date | undefined, items: EventItem[]) {
