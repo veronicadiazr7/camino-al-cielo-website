@@ -17,8 +17,8 @@ const ministries = [
   {title: "Ministerio de Niños", value: "Ministerio de Ninos"},
   {title: "Generación Que Arde", value: "Generacion Que Arde"},
   {title: "Semillas Que Arden", value: "Generacion Que Arden"},
-  {title: "Las que no retroceden", value: "Las que no retroceden" }
-  {title: "Hombres de Valor", value: "Hombres de Valor" }
+  {title: "Las que no retroceden", value: "Las que no retroceden" },
+  {title: "Hombres de Valor", value: "Hombres de Valor" },
   {title: "Matrimonios", value: "Matrimonios"},
   {title: "Adoración", value: "Adoracion"},
   {title: "Kit Dorado", value: "Kit Dorado" },
