@@ -117,7 +117,7 @@ export default function MinisteriosPage() {
         </div>
       </section>
 
-      <section className="px-6 py-16 sm:px-10 lg:px-16 lg:py-24">
+      {/* <section className="px-6 py-16 sm:px-10 lg:px-16 lg:py-24">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="space-y-6">
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary-500">
@@ -180,7 +180,7 @@ export default function MinisteriosPage() {
             })}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="px-6 pb-16 sm:px-10 lg:px-16 lg:pb-24">
         <div className="mx-auto max-w-7xl">
@@ -191,14 +191,13 @@ export default function MinisteriosPage() {
             <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
               <div>
                 <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary-300">
-                  Ready to serve?
+                Hay un lugar para ti.
                 </p>
                 <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] sm:text-4xl">
-                  We can turn this into a full ministry landing page next.
+                Encuentra tu lugar para servir.
                 </h2>
                 <p className="mt-4 max-w-2xl text-lg leading-8 text-white/78">
-                  If you want, the next step can be adding real ministry data,
-                  leader bios, schedules, and dedicated pages for each group.
+                Cada ministerio tiene oportunidades para aprender, servir y compartir en comunidad. Explora los próximos eventos y encuentra dónde puedes involucrarte.
                 </p>
               </div>
 
@@ -206,7 +205,7 @@ export default function MinisteriosPage() {
                 href="/eventos"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-secondary-900 transition hover:bg-primary-50"
               >
-                View events
+                Ver los próximos eventos
                 <ArrowRight className="size-4" />
               </a>
             </div>
