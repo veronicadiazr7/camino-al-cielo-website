@@ -39,8 +39,10 @@ type ImageCardProps = {
   className?: string;
   imageClassName?: string;
   contentClassName?: string;
+  eyebrowClassName?: string;
   titleClassName?: string;
   descriptionClassName?: string;
+  ctaClassName?: string;
 };
 
 export function ImageCard({
@@ -55,8 +57,10 @@ export function ImageCard({
   className,
   imageClassName,
   contentClassName,
+  eyebrowClassName,
   titleClassName,
   descriptionClassName,
+  ctaClassName,
 }: ImageCardProps) {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
@@ -138,7 +142,12 @@ export function ImageCard({
       <div className={cn("flex flex-1 flex-col", contentClassName)}>
         <CardHeader className="px-0 pt-0">
           {eyebrow ? (
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary-500">
+            <p
+              className={cn(
+                "text-sm font-semibold uppercase tracking-[0.2em] text-primary-500",
+                eyebrowClassName
+              )}
+            >
               {eyebrow}
             </p>
           ) : null}
@@ -164,7 +173,10 @@ export function ImageCard({
           <CardContent className="mt-auto px-0">
             <Link
               href={href}
-              className="inline-flex items-center gap-2 text-xl font-semibold text-primary-700 transition-transform duration-200 group-hover:translate-x-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-4 focus-visible:ring-offset-white"
+              className={cn(
+                "inline-flex items-center gap-2 text-xl font-semibold text-primary-700 transition-transform duration-200 group-hover:translate-x-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-4 focus-visible:ring-offset-white",
+                ctaClassName
+              )}
             >
               {ctaLabel}
               <ArrowRight className="size-5" />

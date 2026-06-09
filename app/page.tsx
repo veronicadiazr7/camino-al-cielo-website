@@ -1,10 +1,14 @@
 import Link from "next/link";
 import {
   ArrowRight,
+  BookOpen,
   CalendarDays,
   Church,
+  Flame,
   HeartHandshake,
   MapPin,
+  RefreshCw,
+  Send,
   Sparkles,
   Users,
 } from "lucide-react";
@@ -13,7 +17,6 @@ import cultoAltisimo from "@/lib/images/CultoAltisimoTV.png";
 import ministerioJovenes from "@/lib/images/ministerio-jovenes/ministerio-jovenes.jpg";
 import ministerioNinos from "@/lib/images/ministerio-ninos/ministerio-ninos-1.jpeg";
 
-import { CardSection } from "./components/CardSection";
 import { HeroSlideshow } from "./components/HeroSlideshow";
 import { ImageCard } from "./components/ImageCard";
 import { Card, CardContent } from "./components/ui/card";
@@ -60,6 +63,29 @@ const nextSteps = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum, mauris at luctus luctus.",
     href: "/eventos",
     icon: Sparkles,
+  },
+];
+
+const ardeValues = [
+  {
+    title: "Amar",
+    description: "Reflejar el amor de Dios en cada persona y familia.",
+    icon: HeartHandshake,
+  },
+  {
+    title: "Restaurar",
+    description: "Acompañar vidas hacia sanidad, identidad y esperanza.",
+    icon: RefreshCw,
+  },
+  {
+    title: "Discipular",
+    description: "Formar creyentes firmes, maduros y llenos de propósito.",
+    icon: BookOpen,
+  },
+  {
+    title: "Enviar",
+    description: "Vivir con llamado, servicio y misión en cada lugar.",
+    icon: Send,
   },
 ];
 
@@ -132,51 +158,108 @@ export default function Home() {
         </div>
       </section>
 
-      <CardSection
-        items={[
-          {
-            eyebrow: "Misión",
-            title: "Nuestra misión está basada en Mateo 28:19",
-            description:
-              "Por tanto, id y haced discípulos a todas las naciones, bautizándolos en el nombre del Padre, del Hijo y del Espíritu Santo.",
-            content:
-              "Nos comprometemos a cumplir este llamado formando discípulos, compartiendo el evangelio y guiando a las personas a una relación genuina con Cristo.",
-            imageSrc: "/images/hero-placeholder-2.svg",
-            imageAlt: "Mensaje destacado",
-            imagePosition: "right",
-            ctaLabel: "Ver mas",
-            ctaHref: "/quienes-somos",
-          },
-          {
-            eyebrow: "Visión",
-            title: "La visión de la casa se resume en ARDE",
-            description: "Amar. Restaurar. Discipular. Enviar.",
-            content:
-              "A través de esta visión, buscamos formar vidas transformadas que reflejen el amor de Dios, sean restauradas en su identidad, crezcan como discípulos y vivan enviadas con propósito.",
-            imageSrc: "/images/collage-logo-ministerios.png",
-            imageAlt: "Ministerios logo",
-            imageFit: "contain",
-            imagePosition: "left",
-            ctaLabel: "Conocer ministerios",
-            ctaHref: "/ministerios",
-            backgroundColor: "bg-white",
-            titleColor: "text-secondary-900",
-            contentColor: "text-secondary-600",
-            descriptionColor: "text-secondary-600",
-          },
-        ]}
-      />
+      <section className="bg-[#f3f1ec] px-6 py-16 sm:px-10 lg:px-16 lg:py-24">
+        <div className="mx-auto grid max-w-6xl gap-6 lg:grid-cols-[0.9fr_1.1fr]">
+          <Card
+            variant="noBorder"
+            className="overflow-hidden rounded-2xl border border-[#d8cda9] bg-white p-7 shadow-sm shadow-secondary-900/5 sm:p-9"
+          >
+            <CardContent className="px-0">
+              <div className="flex size-12 items-center justify-center rounded-full bg-[#c9a85f] text-white">
+                <BookOpen className="size-5" />
+              </div>
+              <p className="mt-8 text-xs font-semibold uppercase tracking-[0.28em] text-[#8f6f28]">
+                Misión
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold leading-tight text-secondary-900 sm:text-4xl">
+                Nuestra misión está basada en <i>Mateo 28:19</i>.
+              </h2>
+              <div className="mt-7 rounded-2xl border border-primary-200 bg-primary-50 p-5">
+                <p className="text-lg leading-8 text-primary-900">
+                  <i>Por tanto, id y haced discípulos a todas las naciones,
+                  bautizándolos en el nombre del Padre, del Hijo y del Espíritu
+                  Santo.</i>
+                </p>
+              </div>
+              <p className="mt-6 text-base leading-8 text-secondary-700">
+                Nos comprometemos a cumplir este llamado formando discípulos,
+                compartiendo el evangelio y guiando a las personas a una
+                relación genuina con Cristo.
+              </p>
+              <Link
+                href="/quienes-somos"
+                className="mt-8 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-[#8f6f28]"
+              >
+                Conocer la casa
+                <ArrowRight className="size-4" />
+              </Link>
+            </CardContent>
+          </Card>
 
-      <section className="bg-[#f8f8fa] px-6 py-16 sm:px-10 lg:px-16 lg:py-20">
+          <Card
+            variant="noBorder"
+            className="rounded-2xl border border-[#d8cda9] bg-white p-7 text-secondary-900 shadow-sm shadow-secondary-900/5 sm:p-9"
+          >
+            <CardContent className="px-0">
+              <div className="flex items-center gap-3">
+                <div className="flex size-12 items-center justify-center rounded-full bg-primary-700 text-white">
+                  <Flame className="size-5" />
+                </div>
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#8f6f28]">
+                    Visión
+                  </p>
+                  <p className="mt-1 text-sm text-[#8f6f28]">
+                    La casa se resume en ARDE
+                  </p>
+                </div>
+              </div>
+
+              <h2 className="mt-7 text-3xl font-semibold leading-tight sm:text-4xl">
+                Formar vidas transformadas que vivan enviadas con propósito.
+              </h2>
+              <p className="mt-5 text-base leading-8 text-secondary-700">
+                A través de esta visión, buscamos que cada vida refleje el amor
+                de Dios, sea restaurada en su identidad y crezca como discípulo.
+              </p>
+
+              <div className="mt-8 grid gap-3 sm:grid-cols-2">
+                {ardeValues.map((item) => {
+                  const Icon = item.icon;
+
+                  return (
+                    <div
+                      key={item.title}
+                      className="rounded-2xl border border-[#ded4b4] bg-[#fbfaf7] p-5"
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className="flex size-10 items-center justify-center rounded-full bg-primary-50 text-primary-700">
+                          <Icon className="size-4" />
+                        </div>
+                        <h3 className="text-xl font-semibold">{item.title}</h3>
+                      </div>
+                      <p className="mt-3 text-sm leading-6 text-secondary-700">
+                        {item.description}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      <section className="bg-[#101217] px-6 py-16 text-white sm:px-10 lg:px-16 lg:py-20">
         <div className="mx-auto max-w-6xl">
           <div className="mb-10 max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#b79a59]">
               Vida en comunidad
             </p>
-            <h2 className="mt-4 text-3xl font-semibold leading-tight text-secondary-900 sm:text-4xl">
+            <h2 className="mt-4 text-3xl font-semibold leading-tight text-white sm:text-4xl">
               Espacios para cada etapa de la vida.
             </h2>
-            <p className="mt-4 text-base leading-8 text-secondary-600">
+            <p className="mt-4 text-base leading-8 text-white/72">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
               ante ipsum primis in faucibus orci luctus et ultrices posuere.
             </p>
@@ -184,14 +267,18 @@ export default function Home() {
 
           <div className="grid gap-6 lg:grid-cols-3">
             <ImageCard
-              eyebrow="Adoracion"
+              eyebrow="Servicios"
               title="Cultos y reuniones"
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in tellus et turpis porta posuere."
               imageSrc={cultoAltisimo}
               imageAlt="Culto en Casa de Oracion Camino Al Cielo"
               href="/eventos"
               ctaLabel="Ver calendario"
-              className="bg-white"
+              className="border border-white/10 bg-white/[0.06]"
+              eyebrowClassName="text-[#c9a85f]"
+              titleClassName="text-white"
+              descriptionClassName="text-white/72"
+              ctaClassName="text-[#c9a85f] focus-visible:ring-offset-[#101217]"
             />
             <ImageCard
               eyebrow="Jovenes"
@@ -201,7 +288,11 @@ export default function Home() {
               imageAlt="Ministerio de jovenes"
               href="/ministerios#youth"
               ctaLabel="Conocer mas"
-              className="bg-white"
+              className="border border-white/10 bg-white/[0.06]"
+              eyebrowClassName="text-[#c9a85f]"
+              titleClassName="text-white"
+              descriptionClassName="text-white/72"
+              ctaClassName="text-[#c9a85f] focus-visible:ring-offset-[#101217]"
             />
             <ImageCard
               eyebrow="Ninos"
@@ -211,7 +302,11 @@ export default function Home() {
               imageAlt="Ministerio de ninos"
               href="/ministerios#niños"
               ctaLabel="Conocer mas"
-              className="bg-white"
+              className="border border-white/10 bg-white/[0.06]"
+              eyebrowClassName="text-[#c9a85f]"
+              titleClassName="text-white"
+              descriptionClassName="text-white/72"
+              ctaClassName="text-[#c9a85f] focus-visible:ring-offset-[#101217]"
             />
           </div>
         </div>
