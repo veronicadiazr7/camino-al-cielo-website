@@ -4,6 +4,9 @@ import ministerioJovenes3 from "@/lib/images/ministerio-jovenes/ministerio-joven
 import ministerioNinos1 from "@/lib/images/ministerio-ninos/ministerio-ninos-1.jpeg";
 import ministerioNinos2 from "@/lib/images/ministerio-ninos/ministerio-ninos-2.jpeg";
 import ministerioNinos3 from "@/lib/images/ministerio-ninos/ministerio-ninos-3.jpeg";
+import institutoKalEl from "@/lib/images/instituto-kal-el/instituto-kal-el-1.jpg";
+import institutoKalEl2 from "@/lib/images/instituto-kal-el/instituto-kal-el-2.jpg";
+import institutoKalEl3 from "@/lib/images/instituto-kal-el/instituto-kal-el-3.jpg";
 
 
 export const ministries = [
@@ -40,14 +43,14 @@ export const ministries = [
     id: "instituto",
     title: "Instituto Kal-EL",
     description:
-      "A ministry for musicians, vocalists, and creatives who want to lead the church in heartfelt worship.",
-    imageSrc: "/images/CultoAltisimoTV.png",
-    imageAlt: "Worship ministry",
-    href: "#worship",
+      "Instituto Kal-el es un espacio de formación y desarrollo espiritual para jóvenes y adultos que buscan crecer en su fe y servicio a Dios.",
+    imageSrc: "/images/institute-kal-el.jpg",
+    imageAlt: "Instituto Kal-el",
+    href: "#institute",
     imageSlides: [
-      { src: "/images/CultoAltisimoTV.png", alt: "Adoracion slide 1" },
-      { src: "/images/hero-placeholder-2.svg", alt: "Adoracion slide 2" },
-      { src: "/images/hero-placeholder-1.svg", alt: "Adoracion slide 3" },
+      { src: institutoKalEl, alt: "Instituto Kal-el slide 1" },
+      { src: institutoKalEl2, alt: "Instituto Kal-el slide 2" },
+      { src: institutoKalEl3, alt: "Instituto Kal-el slide 3" },
     ],
   },
 ];
