@@ -21,20 +21,20 @@ import { Card, CardContent } from "./components/ui/card";
 const serviceHighlights = [
   {
     label: "Servicio principal",
-    value: "Domingo",
+    value: "Domingos",
     detail: "10:00 AM",
     icon: Church,
   },
   {
-    label: "Estudio y oracion",
-    value: "Miercoles",
-    detail: "7:00 PM",
+    label: "Estudio bíblico",
+    value: "Martes",
+    detail: "7:30 PM",
     icon: CalendarDays,
   },
   {
     label: "Una casa para todos",
     value: "Familia",
-    detail: "Ninos, jovenes y adultos",
+    detail: "Niños, jóvenes y adultos",
     icon: Users,
   },
 ];
@@ -75,7 +75,7 @@ export default function Home() {
               Casa de Oracion Camino Al Cielo
             </p>
             <h1 className="mt-4 max-w-3xl text-4xl font-semibold leading-tight text-secondary-900 sm:text-5xl">
-              Una familia que ama, restaura, discipula y envia.
+              Una casa que ama, restaura, discipula y envia.
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-8 text-secondary-600 sm:text-lg">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
@@ -135,11 +135,12 @@ export default function Home() {
       <CardSection
         items={[
           {
-            eyebrow: "Mision",
-            title: "Somos una Iglesia que A.R.D.E.",
-            description: "Ama, restaura, discipula y envia.",
+            eyebrow: "Misión",
+            title: "Nuestra misión está basada en Mateo 28:19",
+            description:
+              "Por tanto, id y haced discípulos a todas las naciones, bautizándolos en el nombre del Padre, del Hijo y del Espíritu Santo.",
             content:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras viverra, neque vitae facilisis pretium, arcu augue luctus lectus.",
+              "Nos comprometemos a cumplir este llamado formando discípulos, compartiendo el evangelio y guiando a las personas a una relación genuina con Cristo.",
             imageSrc: "/images/hero-placeholder-2.svg",
             imageAlt: "Mensaje destacado",
             imagePosition: "right",
@@ -147,16 +148,16 @@ export default function Home() {
             ctaHref: "/quienes-somos",
           },
           {
-            eyebrow: "Ministerios",
-            title: "Cada miembro, un proposito en Cristo",
-            description: "Encuentra tu lugar para crecer y servir.",
+            eyebrow: "Visión",
+            title: "La visión de la casa se resume en ARDE",
+            description: "Amar. Restaurar. Discipular. Enviar.",
             content:
-              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean dignissim libero non urna suscipit, vitae blandit lectus cursus.",
+              "A través de esta visión, buscamos formar vidas transformadas que reflejen el amor de Dios, sean restauradas en su identidad, crezcan como discípulos y vivan enviadas con propósito.",
             imageSrc: "/images/collage-logo-ministerios.png",
             imageAlt: "Ministerios logo",
             imageFit: "contain",
             imagePosition: "left",
-            ctaLabel: "Ver ministerios",
+            ctaLabel: "Conocer ministerios",
             ctaHref: "/ministerios",
             backgroundColor: "bg-white",
             titleColor: "text-secondary-900",
@@ -173,7 +174,7 @@ export default function Home() {
               Vida en comunidad
             </p>
             <h2 className="mt-4 text-3xl font-semibold leading-tight text-secondary-900 sm:text-4xl">
-              Espacios para cada etapa de la familia.
+              Espacios para cada etapa de la vida.
             </h2>
             <p className="mt-4 text-base leading-8 text-secondary-600">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
