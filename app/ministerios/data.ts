@@ -4,9 +4,9 @@ import ministerioJovenes3 from "@/lib/images/ministerio-jovenes/ministerio-joven
 import ministerioNinos1 from "@/lib/images/ministerio-ninos/ministerio-ninos-1.jpeg";
 import ministerioNinos2 from "@/lib/images/ministerio-ninos/ministerio-ninos-2.jpeg";
 import ministerioNinos3 from "@/lib/images/ministerio-ninos/ministerio-ninos-3.jpeg";
-import institutoKalEl from "@/lib/images/instituto-kal-el/instituto-kal-el-1.jpg";
-import institutoKalEl2 from "@/lib/images/instituto-kal-el/instituto-kal-el-2.jpg";
-import institutoKalEl3 from "@/lib/images/instituto-kal-el/instituto-kal-el-3.jpg";
+import institutoKalEl from "@/lib/images/instituto-kal-el/instituto-kal-el-1.jpeg";
+import institutoKalEl2 from "@/lib/images/instituto-kal-el/instituto-kal-el-2.jpeg";
+import institutoKalEl3 from "@/lib/images/instituto-kal-el/instituto-kal-el-3.jpeg";
 
 
 export const ministries = [
