@@ -1,4 +1,4 @@
-import { ArrowRight, HeartHandshake, Sparkles, Users,UserGroup } from "lucide-react";
+import { ArrowRight, HeartHandshake, Sparkles, Users, UsersRound } from "lucide-react";
 
 import { HeroSlideshow } from "../components/HeroSlideshow";
 import { ImageCard } from "../components/ImageCard";
@@ -66,7 +66,7 @@ export default function MinisteriosPage() {
           >
             <CardHeader className="px-0 pt-0">
               <div className="mb-4 inline-flex size-12 items-center justify-center rounded-full bg-white text-primary-600 shadow-sm">
-                <UserGroup className="size-6" />
+                <UsersRound className="size-6" />
               </div>
               <CardTitle className="text-2xl text-primary-700">
                 Encuentra tu lugar
