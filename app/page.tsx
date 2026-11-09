@@ -10,7 +10,6 @@ import {
   RefreshCw,
   Send,
   Sparkles,
-  Users,
 } from "lucide-react";
 
 import cultoAltisimo from "@/lib/images/CultoAltisimoTV.png";
@@ -336,7 +335,7 @@ export default function Home() {
                       href={step.href}
                       className="mt-6 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-primary-700"
                     >
-                      Ver mas
+                      Ver más
                       <ArrowRight className="size-4" />
                     </Link>
                   </CardContent>
