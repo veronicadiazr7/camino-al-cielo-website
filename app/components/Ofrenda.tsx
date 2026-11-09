@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { Church, HeartHandshake, Home, Mail } from "lucide-react";
+import { Church } from "lucide-react";
 import ATHMovilBusiness from "@/lib/images/athmovilicon.png";
+import Image from "next/image";
 
 type OfrendaProps = {
   eyebrow?: string;
@@ -57,8 +57,7 @@ export function Ofrenda({
           <div className="absolute bottom-12 right-10 size-24 rounded-full border border-white/20" />
 
           <div className="relative flex size-36 items-center justify-center rounded-full bg-white text-primary-700 shadow-xl">
-            {/* <HeartHandshake className="size-16" strokeWidth={1.7} aria-hidden="true" /> */}
-            <ATHMovilBusiness className="size-16" />
+            <Image src={ATHMovilBusiness} alt="ATH Movil Business" className="size-16" />
           </div>
 
           <div className="absolute bottom-10 left-1/2 w-[78%] -translate-x-1/2 rounded-2xl bg-white/95 px-5 py-4 text-center shadow-xl">
