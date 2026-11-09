@@ -1,6 +1,5 @@
 
 import ministerioJovenes from "@/lib/images/ministerio-jovenes/ministerio-jovenes.jpg";
-import ministerioJovenes1 from "@/lib/images/ministerio-jovenes/ministerio-jovenes.jpg";
 import ministerioJovenes2 from "@/lib/images/ministerio-jovenes/ministerio-jovenes-2.jpg";
 import ministerioJovenes3 from "@/lib/images/ministerio-jovenes/ministerio-jovenes-3.jpg";
 import ministerioJovenes4 from "@/lib/images/ministerio-jovenes/ministerio-jovenes-4.png";
@@ -47,17 +46,16 @@ export const ministries = [
     title: "Generación Que ARDE",
     eyebrow: "Ministerio de Jóvenes",
     description:"Jóvenes apasionados por Dios, que no se conforman con lo superficial, sino que viven encendidos por Su presencia.Una generación que ama, busca y representa a Cristo con valentía, creciendo en identidad, fe y propósito para impactar su entorno y generación.",
-    imageSrc: ministerioJovenes1,
+    imageSrc: ministerioJovenes,
     imageAlt: "Youth ministry",
     href: "https://www.instagram.com/generacionarde/",
     imageSlides: [
-      { src: ministerioJovenes1, alt: "Generacion Que ARDE slide 1" },
+      { src: ministerioJovenes, alt: "Generacion Que ARDE slide 1" },
       { src: ministerioJovenes2, alt: "Generacion Que ARDE slide 2" },
       { src: ministerioJovenes3, alt: "Generacion Que ARDE slide 3" },
       { src: ministerioJovenes4, alt: "Generacion Que ARDE slide 4" },
       { src: ministerioJovenes5, alt: "Generacion Que ARDE slide 5" },
       { src: ministerioJovenes6, alt: "Generacion Que ARDE slide 6" },
-      { src: ministerioJovenes, alt: "Generacion Que ARDE slide 7" },
     ],
   },
   {
@@ -68,6 +66,7 @@ export const ministries = [
     imageSrc: ministerioHombres,
     imageAlt: "Ministerio de Hombres",
     imageSlides: [
+      { src: ministerioHombres, alt: "Ministerio de Hombres" },
       { src: ministerioHombres1, alt: "Ministerio de Hombres slide 1" },
       { src: ministerioHombres2, alt: "Ministerio de Hombres slide 2" },
       { src: ministerioHombres3, alt: "Ministerio de Hombres slide 3" },

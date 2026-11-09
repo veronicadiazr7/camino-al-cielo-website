@@ -81,16 +81,18 @@ export function HeroSlideshow({ slides = defaultSlides }: HeroSlideshowProps) {
         <CarouselContent>
           {slides.map((slide, index) => (
             <CarouselItem key={typeof slide.image === "string" ? slide.image : slide.image.src}>
-              <div className="relative rounded-2xl md:rounded-none">
+              <div className="relative h-[260px] overflow-hidden rounded-2xl bg-black sm:h-[340px] md:h-[430px] md:rounded-none">
                 <Image
                   src={slide.image}
                   alt={slide.alt?.trim() || slide.title?.trim() || `Casa de Oracion Camino Al Cielo - imagen ${index + 1}`}
-                  width={1280}
-                  height={800}
-                  className="h-[260px] w-full object-cover sm:h-[340px] md:h-[430px]"
-                  priority
+                  fill
+                  sizes="100vw"
+                  className="object-contain"
+                  priority={index === 0}
                 />
-                <div className="absolute inset-0 bg-black/45 lg:py-4" />
+                {(slide.title || slide.subtitle) && (
+                  <div className="pointer-events-none absolute inset-0 bg-black/45" />
+                )}
                 {(slide.title || slide.subtitle) && (
                   <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-8">
                     {slide.title && (
