@@ -182,7 +182,7 @@ export default function QuienesSomosPage() {
                   Planifica tu visita
                 </Link>
                 <Link
-                  href="/eventos"
+                  href="https://www.facebook.com/casadeoracion.caminocieloceiba/"
                   className="rounded-xl border border-white/20 px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10"
                 >
                 Visita nuestro Facebook
