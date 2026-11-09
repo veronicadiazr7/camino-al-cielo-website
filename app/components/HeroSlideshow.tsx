@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Image, { type StaticImageData } from "next/image";
+import cultoAltisimo from "@/lib/images/CultoAltisimoTV.png";
 
 import collage1 from "@/lib/images/collages-slideshow/1.png";
 import collage2 from "@/lib/images/collages-slideshow/2.png";
@@ -33,7 +34,7 @@ type HeroSlideshowProps = {
 const defaultSlides: HeroSlide[] = [
   {
     title: "Bienvenidos a Casa de Oracion",
-    image: "/images/CultoAltisimoTV.png",
+    image: cultoAltisimo,
   },
   {
     image: collage1,
@@ -58,6 +59,11 @@ const defaultSlides: HeroSlide[] = [
 export function HeroSlideshow({ slides = defaultSlides }: HeroSlideshowProps) {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
+  const [imageRatios, setImageRatios] = React.useState<Record<string, number>>({});
+  const activeImage = slides[current]?.image;
+  const aspectRatio = typeof activeImage === "object"
+    ? activeImage.width / activeImage.height
+    : imageRatios[activeImage ?? ""] ?? 1280 / 800;
 
   React.useEffect(() => {
     if (!api) return;
@@ -69,6 +75,7 @@ export function HeroSlideshow({ slides = defaultSlides }: HeroSlideshowProps) {
 
     return () => {
       api.off("select", updateCurrent);
+      api.off("reInit", updateCurrent);
     };
   }, [api]);
 
@@ -78,10 +85,10 @@ export function HeroSlideshow({ slides = defaultSlides }: HeroSlideshowProps) {
         setApi={setApi}
         opts={{ loop: true }}
       >
-        <CarouselContent>
+        <CarouselContent className="ml-0" style={{ aspectRatio }}>
           {slides.map((slide, index) => (
-            <CarouselItem key={typeof slide.image === "string" ? slide.image : slide.image.src}>
-              <div className="relative h-[260px] overflow-hidden rounded-2xl bg-black sm:h-[340px] md:h-[430px] md:rounded-none">
+            <CarouselItem className="h-full pl-0" key={typeof slide.image === "string" ? slide.image : slide.image.src}>
+              <div className="relative h-full overflow-hidden bg-black">
                 <Image
                   src={slide.image}
                   alt={slide.alt?.trim() || slide.title?.trim() || `Casa de Oracion Camino Al Cielo - imagen ${index + 1}`}
@@ -89,6 +96,14 @@ export function HeroSlideshow({ slides = defaultSlides }: HeroSlideshowProps) {
                   sizes="100vw"
                   className="object-contain"
                   priority={index === 0}
+                  onLoad={(event) => {
+                    if (typeof slide.image !== "string") return;
+                    const image = event.currentTarget;
+                    const ratio = image.naturalWidth / image.naturalHeight;
+                    if (Number.isFinite(ratio) && ratio > 0) {
+                      setImageRatios((previous) => ({ ...previous, [slide.image as string]: ratio }));
+                    }
+                  }}
                 />
                 {(slide.title || slide.subtitle) && (
                   <div className="pointer-events-none absolute inset-0 bg-black/45" />
