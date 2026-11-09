@@ -267,7 +267,7 @@ export default function Home() {
             <ImageCard
               eyebrow="Servicios"
               title="Cultos y reuniones"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in tellus et turpis porta posuere."
+              description="Mantente al tanto de nuestros próximos servicios, actividades y encuentros especiales. ¡Nos encantaría conocerte!"
               imageSrc={cultoAltisimo}
               imageAlt="Culto en Casa de Oracion Camino Al Cielo"
               href="/eventos"
@@ -281,7 +281,7 @@ export default function Home() {
             <ImageCard
               eyebrow="Jovenes"
               title="Generacion que ARDE"
-              description="Una generación de jóvenes que ama, busca y representa a Cristo con valentía, creciendo en identidad, fe y propósito para impactar su entorno y generación. 'Una generación que no se apaga, sino que transforma.' "
+              description="Una generación de jóvenes que ama, busca y representa a Cristo con valentía, creciendo en identidad, fe y propósito para impactar su entorno y generación."
               imageSrc={ministerioJovenes}
               imageAlt="Ministerio de jovenes"
               href="/ministerios#youth"
@@ -295,7 +295,7 @@ export default function Home() {
             <ImageCard
               eyebrow="Ninos"
               title="Semillas que Arden"
-              description="Niños que crecen con identidad, fe y propósito, encendidos por el amor de Dios y preparados para impactar el futuro. 'Pequeñas semillas hoy, grandes llamas mañana.'"
+              description="Niños que crecen con identidad, fe y propósito, encendidos por el amor de Dios y preparados para impactar el futuro."
               imageSrc={ministerioNinos}
               imageAlt="Ministerio de ninos"
               href="/ministerios#niños"
