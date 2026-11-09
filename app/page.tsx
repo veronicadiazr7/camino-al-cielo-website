@@ -79,12 +79,12 @@ const ardeValues = [
   },
   {
     title: "Discipular",
-    description: "Formar creyentes firmes, maduros y llenos de propósito.",
+    description: "Formar creyentes firmes, maduros e íntegros",
     icon: BookOpen,
   },
   {
     title: "Enviar",
-    description: "Vivir con llamado, servicio y misión en cada lugar.",
+    description: "Equipar y encaminar a cada creyente para cumplir el llamado ministerial que Dios le ha encomendado.",
     icon: Send,
   },
 ];
@@ -104,9 +104,7 @@ export default function Home() {
               Una casa que ama, restaura, discipula y envia.
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-8 text-secondary-600 sm:text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-              ad minim veniam, quis nostrud exercitation.
+            Somos una familia de fe comprometida con compartir el amor de Cristo y crecer juntos en Su Palabra. Queremos que cada persona que llegue a nuestra casa encuentre un lugar donde sentirse bienvenida, fortalecer su relación con Dios y descubrir el propósito que Él tiene para su vida. ¡Te esperamos!
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <Link
@@ -283,12 +281,11 @@ export default function Home() {
             <ImageCard
               eyebrow="Jovenes"
               title="Generacion que ARDE"
-              description="Jóvenes apasionados por Dios, que no se conforman con lo superficial, sino que viven encendidos por Su presencia.
-Una generación que ama, busca y representa a Cristo con valentía, creciendo en identidad, fe y propósito para impactar su entorno y generación. "
+              description="Una generación de jóvenes que ama, busca y representa a Cristo con valentía, creciendo en identidad, fe y propósito para impactar su entorno y generación. 'Una generación que no se apaga, sino que transforma.' "
               imageSrc={ministerioJovenes}
               imageAlt="Ministerio de jovenes"
               href="/ministerios#youth"
-              ctaLabel="Conocer mas"
+              ctaLabel="Conocer más"
               className="border border-white/10 bg-white/[0.06]"
               eyebrowClassName="text-[#c9a85f]"
               titleClassName="text-white"
@@ -298,11 +295,11 @@ Una generación que ama, busca y representa a Cristo con valentía, creciendo en
             <ImageCard
               eyebrow="Ninos"
               title="Semillas que Arden"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed mi a sem feugiat aliquet."
+              description="Niños que crecen con identidad, fe y propósito, encendidos por el amor de Dios y preparados para impactar el futuro. 'Pequeñas semillas hoy, grandes llamas mañana.'"
               imageSrc={ministerioNinos}
               imageAlt="Ministerio de ninos"
               href="/ministerios#niños"
-              ctaLabel="Conocer mas"
+              ctaLabel="Conocer más"
               className="border border-white/10 bg-white/[0.06]"
               eyebrowClassName="text-[#c9a85f]"
               titleClassName="text-white"

@@ -28,12 +28,12 @@ const values = [
   },
   {
     title: "Discipula",
-    description: "Formar creyentes firmes, maduros y llenos de propósito.",
+    description: "Formar creyentes firmes, maduros e íntegros.",
     icon: HandHelping,
   },
   {
     title: "Envia",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+    description: "Equipar y encaminar a cada creyente para cumplir el llamado ministerial que Dios le ha encomendado.",
     icon: Send,
   },
 ];
