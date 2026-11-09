@@ -1,7 +1,14 @@
 "use client";
 
 import * as React from "react";
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
+
+import collage1 from "@/lib/images/collages-slideshow/1.png";
+import collage2 from "@/lib/images/collages-slideshow/2.png";
+import collage3 from "@/lib/images/collages-slideshow/3.png";
+import collage4 from "@/lib/images/collages-slideshow/4.png";
+import collage5 from "@/lib/images/collages-slideshow/5.png";
+import collage6 from "@/lib/images/collages-slideshow/6.png";
 
 import {
   type CarouselApi,
@@ -13,7 +20,7 @@ import {
 } from "@/app/components/ui/carousel";
 
 type HeroSlide = {
-  image: string;
+  image: string | StaticImageData;
   title?: string;
   subtitle?: string;
   alt?: string;
@@ -29,19 +36,22 @@ const defaultSlides: HeroSlide[] = [
     image: "/images/CultoAltisimoTV.png",
   },
   {
-    image: "/images/collages-slideshow/1.png",
+    image: collage1,
   },
   {
-    image: "/images/collages-slideshow/2.png",
+    image: collage2,
   },
   {
-    image: "/images/collages-slideshow/3.png",
+    image: collage3,
   },
   {
-    image: "/images/collages-slideshow/4.png",
+    image: collage4,
   },
   {
-    image: "/images/collages-slideshow/5.png",
+    image: collage5,
+  },
+  {
+    image: collage6,
   },
 ];
 
@@ -70,7 +80,7 @@ export function HeroSlideshow({ slides = defaultSlides }: HeroSlideshowProps) {
       >
         <CarouselContent>
           {slides.map((slide, index) => (
-            <CarouselItem key={slide.image}>
+            <CarouselItem key={typeof slide.image === "string" ? slide.image : slide.image.src}>
               <div className="relative rounded-2xl md:rounded-none">
                 <Image
                   src={slide.image}
