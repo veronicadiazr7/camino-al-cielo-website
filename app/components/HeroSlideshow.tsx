@@ -12,7 +12,18 @@ import {
   CarouselPrevious,
 } from "@/app/components/ui/carousel";
 
-const slides = [
+type HeroSlide = {
+  image: string;
+  title?: string;
+  subtitle?: string;
+  alt?: string;
+};
+
+type HeroSlideshowProps = {
+  slides?: HeroSlide[];
+};
+
+const defaultSlides: HeroSlide[] = [
   {
     title: "Bienvenidos a Casa de Oracion",
     image: "/images/CultoAltisimoTV.png",
@@ -34,7 +45,7 @@ const slides = [
   },
 ];
 
-export function HeroSlideshow() {
+export function HeroSlideshow({ slides = defaultSlides }: HeroSlideshowProps) {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
 
@@ -58,24 +69,30 @@ export function HeroSlideshow() {
         opts={{ loop: true }}
       >
         <CarouselContent>
-          {slides.map((slide) => (
-            <CarouselItem key={slide.title}>
+          {slides.map((slide, index) => (
+            <CarouselItem key={slide.image}>
               <div className="relative rounded-2xl md:rounded-none">
                 <Image
                   src={slide.image}
-                  alt={slide.title}
+                  alt={slide.alt?.trim() || slide.title?.trim() || `Casa de Oracion Camino Al Cielo - imagen ${index + 1}`}
                   width={1280}
                   height={800}
                   className="h-[260px] w-full object-cover sm:h-[340px] md:h-[430px]"
                   priority
                 />
                 <div className="absolute inset-0 bg-black/45 lg:py-4" />
-                <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-8">
-                  <h2 className="text-xl font-bold sm:text-3xl">{slide.title}</h2>
-                  <p className="mt-2 max-w-2xl text-sm text-white/90 sm:text-base">
-                    {slide.subtitle}
-                  </p>
-                </div>
+                {(slide.title || slide.subtitle) && (
+                  <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-8">
+                    {slide.title && (
+                      <h2 className="text-xl font-bold sm:text-3xl">{slide.title}</h2>
+                    )}
+                    {slide.subtitle && (
+                      <p className="mt-2 max-w-2xl text-sm text-white/90 sm:text-base">
+                        {slide.subtitle}
+                      </p>
+                    )}
+                  </div>
+                )}
               </div>
             </CarouselItem>
           ))}

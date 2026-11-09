@@ -16,6 +16,7 @@ import cultoAltisimo from "@/lib/images/CultoAltisimoTV.png";
 import ministerioJovenes from "@/lib/images/ministerio-jovenes/ministerio-jovenes.jpg";
 import ministerioNinos from "@/lib/images/ministerio-ninos/ministerio-ninos-1.jpeg";
 
+import { PastoresSection } from "./components/PastoresSection";
 import { HeroSlideshow } from "./components/HeroSlideshow";
 import { ImageCard } from "./components/ImageCard";
 import { Card, CardContent } from "./components/ui/card";
@@ -246,6 +247,8 @@ export default function Home() {
           </Card>
         </div>
       </section>
+
+      <PastoresSection />
 
       <section className="bg-[#101217] px-6 py-16 text-white sm:px-10 lg:px-16 lg:py-20">
         <div className="mx-auto max-w-6xl">

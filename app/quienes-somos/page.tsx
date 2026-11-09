@@ -13,6 +13,7 @@ import {
 import cultoAltisimo from "@/lib/images/CultoAltisimoTV.png";
 import ministerioJovenes from "@/lib/images/ministerio-jovenes/ministerio-jovenes.jpg";
 
+import { PastoresSection } from "../components/PastoresSection";
 import { Card, CardContent } from "../components/ui/card";
 
 const values = [
@@ -153,6 +154,8 @@ export default function QuienesSomosPage() {
           </div>
         </div>
       </section>
+
+      <PastoresSection />
 
       <section className="bg-gradient-to-b from-tertiary-900/20 via-primary-700/60 to-tertiary-900 px-6 py-12 sm:px-10 sm:py-12 lg:px-12">
         <div className="mx-auto max-w-6xl">
