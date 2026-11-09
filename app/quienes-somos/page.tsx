@@ -185,7 +185,7 @@ export default function QuienesSomosPage() {
                   href="/eventos"
                   className="rounded-xl border border-white/20 px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10"
                 >
-                  Ve nuestra transmisión en vivo
+                Visita nuestro Facebook
                 </Link>
               </div>
             </div>

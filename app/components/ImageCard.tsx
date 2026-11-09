@@ -53,7 +53,7 @@ export function ImageCard({
   imageAlt,
   imageSlides,
   href,
-  ctaLabel = "Learn More",
+  ctaLabel = "Conoce más",
   className,
   imageClassName,
   contentClassName,
