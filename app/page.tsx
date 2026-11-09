@@ -29,16 +29,16 @@ const serviceHighlights = [
     icon: Church,
   },
   {
-    label: "Estudio bíblico",
+    label: "Estudio bíblico - Para todas las edades",
     value: "Martes",
     detail: "7:30 PM",
     icon: CalendarDays,
   },
   {
-    label: "Una casa para todos",
-    value: "Familia",
-    detail: "Niños, jóvenes y adultos",
-    icon: Users,
+    label: "Instituto Kal-el",
+    value: "Jueves",
+    detail: "7:00 PM",
+    icon: BookOpen,
   },
 ];
 
@@ -46,21 +46,21 @@ const nextSteps = [
   {
     title: "Conoce la casa",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae arcu sed justo facilisis interdum.",
+      "Más que un lugar de reunión, somos una familia de fe. Conoce nuestra iglesia, nuestra historia y el corazón que nos une como comunidad en Cristo.",
     href: "/quienes-somos",
     icon: Church,
   },
   {
     title: "Encuentra comunidad",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non libero vitae ipsum gravida laoreet.",
+      "No tienes que caminar solo en la fe. Descubre nuestros ministerios y encuentra un espacio para compartir, crear conexiones y crecer junto a otros.",
     href: "/ministerios",
     icon: HeartHandshake,
   },
   {
     title: "Vive lo proximo",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum, mauris at luctus luctus.",
+      "¡Siempre hay algo por compartir! Mantente al tanto de nuestros próximos servicios, actividades y encuentros especiales. Queremos que seas parte de cada momento.",
     href: "/eventos",
     icon: Sparkles,
   },
@@ -283,7 +283,8 @@ export default function Home() {
             <ImageCard
               eyebrow="Jovenes"
               title="Generacion que ARDE"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed leo in justo fermentum."
+              description="Jóvenes apasionados por Dios, que no se conforman con lo superficial, sino que viven encendidos por Su presencia.
+Una generación que ama, busca y representa a Cristo con valentía, creciendo en identidad, fe y propósito para impactar su entorno y generación. "
               imageSrc={ministerioJovenes}
               imageAlt="Ministerio de jovenes"
               href="/ministerios#youth"
@@ -360,9 +361,7 @@ export default function Home() {
               Queremos recibirte en casa.
             </h2>
             <p className="mt-4 text-base leading-8 text-white/72">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-              tempor, erat et bibendum porta, sapien erat tincidunt lorem, vitae
-              interdum justo neque sed arcu.
+            Calle Muñoz Rivera, Edificio #7, Fajardo, PR 00738
             </p>
           </div>
 

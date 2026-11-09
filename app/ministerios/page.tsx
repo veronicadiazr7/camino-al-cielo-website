@@ -1,4 +1,4 @@
-import { ArrowRight, HeartHandshake, Music4, Sparkles, Users } from "lucide-react";
+import { ArrowRight, HeartHandshake, Sparkles, Users,UserGroup } from "lucide-react";
 
 import { HeroSlideshow } from "../components/HeroSlideshow";
 import { ImageCard } from "../components/ImageCard";
@@ -56,7 +56,7 @@ export default function MinisteriosPage() {
             Un lugar para que cada generación crezca, pertenezca y sirva. Encuentra tu comunidad.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-secondary-600">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+            Creemos que todos tenemos un lugar y un propósito dentro del cuerpo de Cristo. A través de nuestros ministerios, buscamos crear espacios de compañerismo, crecimiento espiritual y servicio, donde personas de todas las edades puedan fortalecer su fe, desarrollar sus dones y caminar juntas en Cristo.
             </p>
           </div>
 
@@ -66,7 +66,7 @@ export default function MinisteriosPage() {
           >
             <CardHeader className="px-0 pt-0">
               <div className="mb-4 inline-flex size-12 items-center justify-center rounded-full bg-white text-primary-600 shadow-sm">
-                <Music4 className="size-6" />
+                <UserGroup className="size-6" />
               </div>
               <CardTitle className="text-2xl text-primary-700">
                 Encuentra tu lugar
@@ -74,8 +74,7 @@ export default function MinisteriosPage() {
             </CardHeader>
             <CardContent className="space-y-4 px-0 text-secondary-700">
               <p className="text-base leading-7">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-              </p>
+              Hay un lugar para ti en nuestra familia de fe. Conoce nuestros ministerios, conecta con personas que comparten tu fe y descubre nuevas oportunidades para crecer y servir a Dios.              </p>
               <a
                 href="#ministry-grid"
                 className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-primary-600"
@@ -99,12 +98,9 @@ export default function MinisteriosPage() {
                 Ministerios de la casa
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] text-secondary-900 sm:text-4xl">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+              Diferentes ministerios, una misma misión: compartir el amor de Cristo.
               </h2>
             </div>
-            <p className="max-w-xl text-base leading-7 text-secondary-600">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            </p>
           </div>
 
           <div className="grid gap-6 md:grid-cols-2">

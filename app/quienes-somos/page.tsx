@@ -18,17 +18,17 @@ import { Card, CardContent } from "../components/ui/card";
 const values = [
   {
     title: "Ama",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+    description: "Reflejar el amor de Dios en cada persona y familia.",
     icon: Heart,
   },
   {
     title: "Restaura",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+    description: "Acompañar vidas hacia sanidad, identidad en Cristo y esperanza.",
     icon: Users,
   },
   {
     title: "Discipula",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+    description: "Formar creyentes firmes, maduros y llenos de propósito.",
     icon: HandHelping,
   },
   {
