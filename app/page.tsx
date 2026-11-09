@@ -110,7 +110,7 @@ export default function Home() {
                 href="/quienes-somos"
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-primary-800"
               >
-                Conocenos
+                Conócenos
                 <ArrowRight className="size-4" />
               </Link>
               <Link

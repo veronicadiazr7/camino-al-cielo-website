@@ -18,14 +18,19 @@ const slides = [
     image: "/images/CultoAltisimoTV.png",
   },
   {
-    title: "Adoracion y Palabra",
-    subtitle: "Acompananos en nuestros servicios y encuentros semanales.",
-    image: "/images/hero-placeholder-2.svg",
+    image: "/images/collages-slideshow/1.png",
   },
   {
-    title: "Eventos para Toda la Familia",
-    subtitle: "Conecta con ministerios, actividades y oportunidades para servir.",
-    image: "/images/hero-placeholder-3.svg",
+    image: "/images/collages-slideshow/2.png",
+  },
+  {
+    image: "/images/collages-slideshow/3.png",
+  },
+  {
+    image: "/images/collages-slideshow/4.png",
+  },
+  {
+    image: "/images/collages-slideshow/5.png",
   },
 ];
 
