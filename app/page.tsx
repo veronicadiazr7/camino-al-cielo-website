@@ -279,8 +279,8 @@ export default function Home() {
               ctaClassName="text-[#c9a85f] focus-visible:ring-offset-[#101217]"
             />
             <ImageCard
-              eyebrow="Jovenes"
-              title="Generacion que ARDE"
+              eyebrow="Jóvenes"
+              title="Generación que ARDE"
               description="Una generación de jóvenes que ama, busca y representa a Cristo con valentía, creciendo en identidad, fe y propósito para impactar su entorno y generación."
               imageSrc={ministerioJovenes}
               imageAlt="Ministerio de jovenes"
@@ -293,8 +293,8 @@ export default function Home() {
               ctaClassName="text-[#c9a85f] focus-visible:ring-offset-[#101217]"
             />
             <ImageCard
-              eyebrow="Ninos"
-              title="Semillas que Arden"
+              eyebrow="Niños"
+              title="Semillas que ARDEN"
               description="Niños que crecen con identidad, fe y propósito, encendidos por el amor de Dios y preparados para impactar el futuro."
               imageSrc={ministerioNinos}
               imageAlt="Ministerio de ninos"
