@@ -1,5 +1,4 @@
 import { Ofrenda } from "../components/Ofrenda";
-../components/Ofrenda
 export default function OfrendasPage() {
   return (
     <Ofrenda

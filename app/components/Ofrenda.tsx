@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Church, HeartHandshake, Home, Mail } from "lucide-react";
-import ATHMovilBusiness from "@/lib/images/athmovilicon.jpg";
+import ATHMovilBusiness from "@/lib/images/athmovilicon.png";
 
 type OfrendaProps = {
   eyebrow?: string;

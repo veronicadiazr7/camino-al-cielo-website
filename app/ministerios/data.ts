@@ -1,32 +1,26 @@
 
 import ministerioJovenes from "@/lib/images/ministerio-jovenes/ministerio-jovenes.jpg";
-import ministerioJovenes1 from "@/lib/images/ministerio-jovenes/ministerio-jovenes-1.jpg";
+import ministerioJovenes1 from "@/lib/images/ministerio-jovenes/ministerio-jovenes.jpg";
 import ministerioJovenes2 from "@/lib/images/ministerio-jovenes/ministerio-jovenes-2.jpg";
 import ministerioJovenes3 from "@/lib/images/ministerio-jovenes/ministerio-jovenes-3.jpg";
-import ministerioJovenes4 from "@/lib/images/ministerio-jovenes/ministerio-jovenes-4.jpg";
-import ministerioJovenes5 from "@/lib/images/ministerio-jovenes/ministerio-jovenes-5.jpg";
-import ministerioJovenes6 from "@/lib/images/ministerio-jovenes/ministerio-jovenes-6.jpg";
+import ministerioJovenes4 from "@/lib/images/ministerio-jovenes/ministerio-jovenes-4.png";
+import ministerioJovenes5 from "@/lib/images/ministerio-jovenes/ministerio-jovenes-5.jpeg";
+import ministerioJovenes6 from "@/lib/images/ministerio-jovenes/ministerio-jovenes-6.png";
 import ministerioNinos1 from "@/lib/images/ministerio-ninos/ministerio-ninos-1.jpeg";
 import ministerioNinos2 from "@/lib/images/ministerio-ninos/ministerio-ninos-2.jpeg";
 import ministerioNinos3 from "@/lib/images/ministerio-ninos/ministerio-ninos-3.jpeg";
-import ministerioNinos4 from "@/lib/images/ministerio-ninos/ministerio-ninos-4.jpeg";
+import ministerioNinos4 from "@/lib/images/ministerio-ninos/ministerio-ninos-4.jpg";
 import ministerioNinos5 from "@/lib/images/ministerio-ninos/ministerio-ninos-5.jpeg";
 import institutoKalEl from "@/lib/images/instituto-kal-el/instituto-kal-el-1.jpeg";
 import institutoKalEl2 from "@/lib/images/instituto-kal-el/instituto-kal-el-2.jpeg";
 import institutoKalEl3 from "@/lib/images/instituto-kal-el/instituto-kal-el-3.jpeg";
-import institutoKalElLogo from "@/lib/images/instituto-kal-el/instituto-kal-el-logo.jpeg";
-import ministerioHombres from "@/lib/images/ministerio-hombres/ministerio-hombres.jpg";
-import ministerioHombres1 from "@/lib/images/ministerio-hombres/ministerio-hombres-1.jpg";
-import ministerioHombres2 from "@/lib/images/ministerio-hombres/ministerio-hombres-2.jpg";
-import ministerioHombres3 from "@/lib/images/ministerio-hombres/ministerio-hombres-3.jpg";
-import ministerioHombres4 from "@/lib/images/ministerio-hombres/ministerio-hombres-4.jpg";
-import ministerioHombres5 from "@/lib/images/ministerio-hombres/ministerio-hombres-5.jpg";
-import ministerioMujeres from "@/lib/images/ministerio-mujeres/ministerio-mujeres.jpg";
-import ministerioMujeres1 from "@/lib/images/ministerio-mujeres/ministerio-mujeres-1.jpg";
-import ministerioMujeres2 from "@/lib/images/ministerio-mujeres/ministerio-mujeres-2.jpg";
-import ministerioMujeres3 from "@/lib/images/ministerio-mujeres/ministerio-mujeres-3.jpg";
-import ministerioMujeres4 from "@/lib/images/ministerio-mujeres/ministerio-mujeres-4.jpg";
-import ministerioMujeres5 from "@/lib/images/ministerio-mujeres/ministerio-mujeres-5.jpg";
+import institutoKalElLogo from "@/lib/images/instituto-kal-el/instituto-kal-el-logo.png";
+import ministerioHombres from "@/lib/images/ministerio-hombres/ministerio-hombres.png";
+import ministerioHombres1 from "@/lib/images/ministerio-hombres/ministerio-hombres-1.png";
+import ministerioHombres2 from "@/lib/images/ministerio-hombres/ministerio-hombres-2.png";
+import ministerioHombres3 from "@/lib/images/ministerio-hombres/ministerio-hombres-3.png";
+import ministerioMujeres from "@/lib/images/ministerio-mujeres/ministerio-mujeres.jpeg";
+import ministerioMujeres1 from "@/lib/images/ministerio-mujeres/ministerio-mujeres-1.jpeg";
 import ministerioAdultosMayores from "@/lib/images/ministerio-kit-dorado/ministerio-kit.jpg";
 import ministerioAdultosMayores1 from "@/lib/images/ministerio-kit-dorado/ministerio-kit-1.jpg";
 import ministerioAdultosMayores2 from "@/lib/images/ministerio-kit-dorado/ministerio-kit-2.jpg";
@@ -77,8 +71,6 @@ export const ministries = [
       { src: ministerioHombres1, alt: "Ministerio de Hombres slide 1" },
       { src: ministerioHombres2, alt: "Ministerio de Hombres slide 2" },
       { src: ministerioHombres3, alt: "Ministerio de Hombres slide 3" },
-      { src: ministerioHombres4, alt: "Ministerio de Hombres slide 4" },
-      { src: ministerioHombres5, alt: "Ministerio de Hombres slide 5" },
     ],
   },
   {
@@ -90,10 +82,7 @@ export const ministries = [
     imageAlt: "Ministerio de Mujeres",
     imageSlides: [
       { src: ministerioMujeres1, alt: "Ministerio de Mujeres slide 1" },
-      { src: ministerioMujeres2, alt: "Ministerio de Mujeres slide 2" },
-      { src: ministerioMujeres3, alt: "Ministerio de Mujeres slide 3" },
-      { src: ministerioMujeres4, alt: "Ministerio de Mujeres slide 4" },
-      { src: ministerioMujeres5, alt: "Ministerio de Mujeres slide 5" },
+      { src: ministerioMujeres, alt: "Ministerio de Mujeres slide 2" },
     ],
   },
   {
