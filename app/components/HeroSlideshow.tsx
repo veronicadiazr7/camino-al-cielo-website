@@ -59,11 +59,6 @@ const defaultSlides: HeroSlide[] = [
 export function HeroSlideshow({ slides = defaultSlides }: HeroSlideshowProps) {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
-  const [imageRatios, setImageRatios] = React.useState<Record<string, number>>({});
-  const activeImage = slides[current]?.image;
-  const aspectRatio = typeof activeImage === "object"
-    ? activeImage.width / activeImage.height
-    : imageRatios[activeImage ?? ""] ?? 1280 / 800;
 
   React.useEffect(() => {
     if (!api) return;
@@ -85,7 +80,7 @@ export function HeroSlideshow({ slides = defaultSlides }: HeroSlideshowProps) {
         setApi={setApi}
         opts={{ loop: true }}
       >
-        <CarouselContent className="ml-0" style={{ aspectRatio }}>
+        <CarouselContent className="ml-0 h-[min(45svh,430px)]">
           {slides.map((slide, index) => (
             <CarouselItem className="h-full pl-0" key={typeof slide.image === "string" ? slide.image : slide.image.src}>
               <div className="relative h-full overflow-hidden bg-black">
@@ -94,16 +89,8 @@ export function HeroSlideshow({ slides = defaultSlides }: HeroSlideshowProps) {
                   alt={slide.alt?.trim() || slide.title?.trim() || `Casa de Oracion Camino Al Cielo - imagen ${index + 1}`}
                   fill
                   sizes="100vw"
-                  className="object-contain"
+                  className="object-cover object-center"
                   priority={index === 0}
-                  onLoad={(event) => {
-                    if (typeof slide.image !== "string") return;
-                    const image = event.currentTarget;
-                    const ratio = image.naturalWidth / image.naturalHeight;
-                    if (Number.isFinite(ratio) && ratio > 0) {
-                      setImageRatios((previous) => ({ ...previous, [slide.image as string]: ratio }));
-                    }
-                  }}
                 />
                 {(slide.title || slide.subtitle) && (
                   <div className="pointer-events-none absolute inset-0 bg-black/45" />
