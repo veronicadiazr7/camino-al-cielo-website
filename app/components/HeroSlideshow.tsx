@@ -114,10 +114,19 @@ export function HeroSlideshow({ slides = defaultSlides }: HeroSlideshowProps) {
               <div className="relative h-full overflow-hidden bg-black">
                 <Image
                   src={slide.image}
+                  alt=""
+                  aria-hidden="true"
+                  fill
+                  sizes="100vw"
+                  className="pointer-events-none scale-110 object-cover blur-2xl brightness-50"
+                  priority={index === 0}
+                />
+                <Image
+                  src={slide.image}
                   alt={slide.alt?.trim() || slide.title?.trim() || `Casa de Oracion Camino Al Cielo - imagen ${index + 1}`}
                   fill
                   sizes="100vw"
-                  className="object-cover object-center"
+                  className="object-contain object-center"
                   priority={index === 0}
                 />
                 {(slide.title || slide.subtitle) && (
