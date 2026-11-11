@@ -10,6 +10,13 @@ import collage3 from "@/lib/images/collages-slideshow/3.png";
 import collage4 from "@/lib/images/collages-slideshow/4.png";
 import collage5 from "@/lib/images/collages-slideshow/5.png";
 import collage6 from "@/lib/images/collages-slideshow/6.png";
+import collage7 from "@/lib/images/collages-slideshow/7.png";
+import collage8 from "@/lib/images/collages-slideshow/8.png";
+import collage9 from "@/lib/images/collages-slideshow/9.png";
+import collage10 from "@/lib/images/collages-slideshow/10.png";
+import collage11 from "@/lib/images/collages-slideshow/11.png";
+import collage12 from "@/lib/images/collages-slideshow/12.png";
+import collage13 from "@/lib/images/collages-slideshow/13.png";
 
 import {
   type CarouselApi,
@@ -52,7 +59,28 @@ const defaultSlides: HeroSlide[] = [
     image: collage5,
   },
   {
+    image: collage7,
+  },
+  {
+    image: collage10,
+  },
+  {
+    image: collage11,
+  },
+  {
+    image: collage12,
+  },
+    {
     image: collage6,
+  },
+  {
+    image: collage13,
+  },
+  {
+    image: collage8,
+  },
+  {
+    image: collage9,
   },
 ];
 
