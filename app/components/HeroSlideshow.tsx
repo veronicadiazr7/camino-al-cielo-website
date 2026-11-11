@@ -114,12 +114,28 @@ export function HeroSlideshow({ slides = defaultSlides }: HeroSlideshowProps) {
               <div className="relative h-full overflow-hidden bg-black">
                 <Image
                   src={slide.image}
-                  alt={slide.alt?.trim() || slide.title?.trim() || `Casa de Oracion Camino Al Cielo - imagen ${index + 1}`}
+                  alt=""
+                  aria-hidden="true"
                   fill
                   sizes="100vw"
-                  className="object-cover object-center"
+                  className="pointer-events-none scale-110 object-cover blur-2xl brightness-50"
                   priority={index === 0}
                 />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <Image
+                    src={slide.image}
+                    alt={slide.alt?.trim() || slide.title?.trim() || `Casa de Oracion Camino Al Cielo - imagen ${index + 1}`}
+                    width={typeof slide.image === "string" ? 1280 : slide.image.width}
+                    height={typeof slide.image === "string" ? 800 : slide.image.height}
+                    sizes="100vw"
+                    className="h-full w-auto max-w-full object-contain object-center"
+                    style={{
+                      maskImage: "linear-gradient(to right, transparent, black 7%, black 93%, transparent)",
+                      WebkitMaskImage: "linear-gradient(to right, transparent, black 7%, black 93%, transparent)",
+                    }}
+                    priority={index === 0}
+                  />
+                </div>
                 {(slide.title || slide.subtitle) && (
                   <div className="pointer-events-none absolute inset-0 bg-black/45" />
                 )}
