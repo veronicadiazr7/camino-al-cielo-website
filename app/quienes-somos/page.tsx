@@ -13,27 +13,28 @@ import {
 import cultoAltisimo from "@/lib/images/CultoAltisimoTV.png";
 import ministerioJovenes from "@/lib/images/ministerio-jovenes/ministerio-jovenes.jpg";
 
+import { PastoresSection } from "../components/PastoresSection";
 import { Card, CardContent } from "../components/ui/card";
 
 const values = [
   {
     title: "Ama",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+    description: "Reflejar el amor de Dios en cada persona y familia.",
     icon: Heart,
   },
   {
     title: "Restaura",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+    description: "Acompañar vidas hacia sanidad, identidad en Cristo y esperanza.",
     icon: Users,
   },
   {
     title: "Discipula",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+    description: "Formar creyentes firmes, maduros e íntegros.",
     icon: HandHelping,
   },
   {
     title: "Envia",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.",
+    description: "Equipar y encaminar a cada creyente para cumplir el llamado ministerial que Dios le ha encomendado.",
     icon: Send,
   },
 ];
@@ -154,6 +155,8 @@ export default function QuienesSomosPage() {
         </div>
       </section>
 
+      <PastoresSection />
+
       <section className="bg-gradient-to-b from-tertiary-900/20 via-primary-700/60 to-tertiary-900 px-6 py-12 sm:px-10 sm:py-12 lg:px-12">
         <div className="mx-auto max-w-6xl">
           <Card
@@ -182,10 +185,10 @@ export default function QuienesSomosPage() {
                   Planifica tu visita
                 </Link>
                 <Link
-                  href="/eventos"
+                  href="https://www.facebook.com/casadeoracion.caminocieloceiba/"
                   className="rounded-xl border border-white/20 px-5 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10"
                 >
-                  Ve nuestra transmisión en vivo
+                Visita nuestro Facebook
                 </Link>
               </div>
             </div>

@@ -1,17 +1,18 @@
-import Link from "next/link";
-import { Church, HeartHandshake, Home, Mail } from "lucide-react";
+import { Church } from "lucide-react";
+import ATHMovilBusiness from "@/lib/images/athmovilicon.png";
+import Image from "next/image";
 
-type ComingSoonProps = {
+type OfrendaProps = {
   eyebrow?: string;
   title?: string;
   description?: string;
 };
 
-export function ComingSoon({
+export function Ofrenda({
   eyebrow = "Muy pronto",
   title = "Estamos preparando esta pagina",
   description = "Estamos trabajando en este espacio para servirte mejor. Mientras tanto, puedes regresar al inicio o escribirnos si necesitas ayuda.",
-}: ComingSoonProps) {
+}: OfrendaProps) {
   return (
     <section className="relative isolate overflow-hidden bg-[#faf8f2] px-6 py-16 sm:px-10 sm:py-20 lg:px-16">
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_20%,rgba(201,168,95,0.24),transparent_30%),radial-gradient(circle_at_86%_16%,rgba(36,40,204,0.14),transparent_28%),linear-gradient(180deg,#ffffff_0%,#faf8f2_100%)]" />
@@ -30,6 +31,7 @@ export function ComingSoon({
             {description}
           </p>
 
+          {/* TODO: Add links to the page 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/"
@@ -45,7 +47,7 @@ export function ComingSoon({
               <Mail className="size-4" aria-hidden="true" />
               Contactanos
             </Link>
-          </div>
+          </div> */}
         </div>
 
         <div className="relative mx-auto flex aspect-square w-full max-w-[430px] items-center justify-center">
@@ -55,15 +57,15 @@ export function ComingSoon({
           <div className="absolute bottom-12 right-10 size-24 rounded-full border border-white/20" />
 
           <div className="relative flex size-36 items-center justify-center rounded-full bg-white text-primary-700 shadow-xl">
-            <HeartHandshake className="size-16" strokeWidth={1.7} aria-hidden="true" />
+            <Image src={ATHMovilBusiness} alt="ATH Movil Business" className="size-16" />
           </div>
 
           <div className="absolute bottom-10 left-1/2 w-[78%] -translate-x-1/2 rounded-2xl bg-white/95 px-5 py-4 text-center shadow-xl">
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-secondary-600">
-              Casa de Oracion
+             ATH Móvil Business
             </p>
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-secondary-600">
-              Camino Al Cielo
+             /Casadeoracion
             </p>
           </div>
         </div>

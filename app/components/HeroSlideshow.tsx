@@ -1,7 +1,22 @@
 "use client";
 
 import * as React from "react";
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
+import cultoAltisimo from "@/lib/images/CultoAltisimoTV.png";
+
+import collage1 from "@/lib/images/collages-slideshow/1.png";
+import collage2 from "@/lib/images/collages-slideshow/2.png";
+import collage3 from "@/lib/images/collages-slideshow/3.png";
+import collage4 from "@/lib/images/collages-slideshow/4.png";
+import collage5 from "@/lib/images/collages-slideshow/5.png";
+import collage6 from "@/lib/images/collages-slideshow/6.png";
+import collage7 from "@/lib/images/collages-slideshow/7.png";
+import collage8 from "@/lib/images/collages-slideshow/8.png";
+import collage9 from "@/lib/images/collages-slideshow/9.png";
+import collage10 from "@/lib/images/collages-slideshow/10.png";
+import collage11 from "@/lib/images/collages-slideshow/11.png";
+import collage12 from "@/lib/images/collages-slideshow/12.png";
+import collage13 from "@/lib/images/collages-slideshow/13.png";
 
 import {
   type CarouselApi,
@@ -12,24 +27,64 @@ import {
   CarouselPrevious,
 } from "@/app/components/ui/carousel";
 
-const slides = [
+type HeroSlide = {
+  image: string | StaticImageData;
+  title?: string;
+  subtitle?: string;
+  alt?: string;
+};
+
+type HeroSlideshowProps = {
+  slides?: HeroSlide[];
+};
+
+const defaultSlides: HeroSlide[] = [
   {
     title: "Bienvenidos a Casa de Oracion",
-    image: "/images/CultoAltisimoTV.png",
+    image: cultoAltisimo,
   },
   {
-    title: "Adoracion y Palabra",
-    subtitle: "Acompananos en nuestros servicios y encuentros semanales.",
-    image: "/images/hero-placeholder-2.svg",
+    image: collage1,
   },
   {
-    title: "Eventos para Toda la Familia",
-    subtitle: "Conecta con ministerios, actividades y oportunidades para servir.",
-    image: "/images/hero-placeholder-3.svg",
+    image: collage2,
+  },
+  {
+    image: collage3,
+  },
+  {
+    image: collage4,
+  },
+  {
+    image: collage5,
+  },
+  {
+    image: collage7,
+  },
+  {
+    image: collage10,
+  },
+  {
+    image: collage11,
+  },
+  {
+    image: collage12,
+  },
+    {
+    image: collage6,
+  },
+  {
+    image: collage13,
+  },
+  {
+    image: collage8,
+  },
+  {
+    image: collage9,
   },
 ];
 
-export function HeroSlideshow() {
+export function HeroSlideshow({ slides = defaultSlides }: HeroSlideshowProps) {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
 
@@ -43,6 +98,7 @@ export function HeroSlideshow() {
 
     return () => {
       api.off("select", updateCurrent);
+      api.off("reInit", updateCurrent);
     };
   }, [api]);
 
@@ -52,25 +108,33 @@ export function HeroSlideshow() {
         setApi={setApi}
         opts={{ loop: true }}
       >
-        <CarouselContent>
-          {slides.map((slide) => (
-            <CarouselItem key={slide.title}>
-              <div className="relative rounded-2xl md:rounded-none">
+        <CarouselContent className="ml-0 h-[min(45svh,430px)]">
+          {slides.map((slide, index) => (
+            <CarouselItem className="h-full pl-0" key={typeof slide.image === "string" ? slide.image : slide.image.src}>
+              <div className="relative h-full overflow-hidden bg-black">
                 <Image
                   src={slide.image}
-                  alt={slide.title}
-                  width={1280}
-                  height={800}
-                  className="h-[260px] w-full object-cover sm:h-[340px] md:h-[430px]"
-                  priority
+                  alt={slide.alt?.trim() || slide.title?.trim() || `Casa de Oracion Camino Al Cielo - imagen ${index + 1}`}
+                  fill
+                  sizes="100vw"
+                  className="object-cover object-center"
+                  priority={index === 0}
                 />
-                <div className="absolute inset-0 bg-black/45 lg:py-4" />
-                <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-8">
-                  <h2 className="text-xl font-bold sm:text-3xl">{slide.title}</h2>
-                  <p className="mt-2 max-w-2xl text-sm text-white/90 sm:text-base">
-                    {slide.subtitle}
-                  </p>
-                </div>
+                {(slide.title || slide.subtitle) && (
+                  <div className="pointer-events-none absolute inset-0 bg-black/45" />
+                )}
+                {(slide.title || slide.subtitle) && (
+                  <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-8">
+                    {slide.title && (
+                      <h2 className="text-xl font-bold sm:text-3xl">{slide.title}</h2>
+                    )}
+                    {slide.subtitle && (
+                      <p className="mt-2 max-w-2xl text-sm text-white/90 sm:text-base">
+                        {slide.subtitle}
+                      </p>
+                    )}
+                  </div>
+                )}
               </div>
             </CarouselItem>
           ))}

@@ -10,35 +10,35 @@ import {
   RefreshCw,
   Send,
   Sparkles,
-  Users,
 } from "lucide-react";
 
 import cultoAltisimo from "@/lib/images/CultoAltisimoTV.png";
 import ministerioJovenes from "@/lib/images/ministerio-jovenes/ministerio-jovenes.jpg";
 import ministerioNinos from "@/lib/images/ministerio-ninos/ministerio-ninos-1.jpeg";
 
+import { PastoresSection } from "./components/PastoresSection";
 import { HeroSlideshow } from "./components/HeroSlideshow";
 import { ImageCard } from "./components/ImageCard";
 import { Card, CardContent } from "./components/ui/card";
 
 const serviceHighlights = [
   {
-    label: "Servicio principal",
+    label: "Servicio principal - Fiesta Al Altísimo",
     value: "Domingos",
     detail: "10:00 AM",
     icon: Church,
   },
   {
-    label: "Estudio bíblico",
+    label: "Estudio bíblico - Para todas las edades",
     value: "Martes",
     detail: "7:30 PM",
     icon: CalendarDays,
   },
   {
-    label: "Una casa para todos",
-    value: "Familia",
-    detail: "Niños, jóvenes y adultos",
-    icon: Users,
+    label: "Instituto Kal-el",
+    value: "Jueves",
+    detail: "7:00 PM",
+    icon: BookOpen,
   },
 ];
 
@@ -46,21 +46,21 @@ const nextSteps = [
   {
     title: "Conoce la casa",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vitae arcu sed justo facilisis interdum.",
+      "Más que un lugar de reunión, somos una familia de fe. Conoce nuestra iglesia, nuestra historia y el corazón que nos une como comunidad en Cristo.",
     href: "/quienes-somos",
     icon: Church,
   },
   {
     title: "Encuentra comunidad",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer non libero vitae ipsum gravida laoreet.",
+      "No tienes que caminar solo en la fe. Descubre nuestros ministerios y encuentra un espacio para compartir, crear conexiones y crecer junto a otros.",
     href: "/ministerios",
     icon: HeartHandshake,
   },
   {
     title: "Vive lo proximo",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec fermentum, mauris at luctus luctus.",
+      "¡Siempre hay algo por compartir! Mantente al tanto de nuestros próximos servicios, actividades y encuentros especiales. Queremos que seas parte de cada momento.",
     href: "/eventos",
     icon: Sparkles,
   },
@@ -79,12 +79,12 @@ const ardeValues = [
   },
   {
     title: "Discipular",
-    description: "Formar creyentes firmes, maduros y llenos de propósito.",
+    description: "Formar creyentes firmes, maduros e íntegros",
     icon: BookOpen,
   },
   {
     title: "Enviar",
-    description: "Vivir con llamado, servicio y misión en cada lugar.",
+    description: "Equipar y encaminar a cada creyente para cumplir el llamado ministerial que Dios le ha encomendado.",
     icon: Send,
   },
 ];
@@ -104,16 +104,14 @@ export default function Home() {
               Una casa que ama, restaura, discipula y envia.
             </h1>
             <p className="mt-5 max-w-2xl text-base leading-8 text-secondary-600 sm:text-lg">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-              ad minim veniam, quis nostrud exercitation.
+            Somos una familia de fe comprometida con compartir el amor de Cristo y crecer juntos en Su Palabra. Queremos que cada persona que llegue a nuestra casa encuentre un lugar donde sentirse bienvenida, fortalecer su relación con Dios y descubrir el propósito que Él tiene para su vida. ¡Te esperamos!
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/quienes-somos"
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-primary-700 px-5 py-3 text-sm font-semibold text-white transition hover:bg-primary-800"
               >
-                Conocenos
+                Conócenos
                 <ArrowRight className="size-4" />
               </Link>
               <Link
@@ -250,6 +248,8 @@ export default function Home() {
         </div>
       </section>
 
+      <PastoresSection />
+
       <section className="bg-[#101217] px-6 py-16 text-white sm:px-10 lg:px-16 lg:py-20">
         <div className="mx-auto max-w-6xl">
           <div className="mb-10 max-w-3xl">
@@ -269,7 +269,7 @@ export default function Home() {
             <ImageCard
               eyebrow="Servicios"
               title="Cultos y reuniones"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in tellus et turpis porta posuere."
+              description="Mantente al tanto de nuestros próximos servicios, actividades y encuentros especiales. ¡Nos encantaría conocerte!"
               imageSrc={cultoAltisimo}
               imageAlt="Culto en Casa de Oracion Camino Al Cielo"
               href="/eventos"
@@ -281,13 +281,13 @@ export default function Home() {
               ctaClassName="text-[#c9a85f] focus-visible:ring-offset-[#101217]"
             />
             <ImageCard
-              eyebrow="Jovenes"
-              title="Generacion que ARDE"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed leo in justo fermentum."
+              eyebrow="Jóvenes"
+              title="Generación que ARDE"
+              description="Una generación de jóvenes que ama, busca y representa a Cristo con valentía, creciendo en identidad, fe y propósito para impactar su entorno y generación."
               imageSrc={ministerioJovenes}
               imageAlt="Ministerio de jovenes"
               href="/ministerios#youth"
-              ctaLabel="Conocer mas"
+              ctaLabel="Conocer más"
               className="border border-white/10 bg-white/[0.06]"
               eyebrowClassName="text-[#c9a85f]"
               titleClassName="text-white"
@@ -295,13 +295,13 @@ export default function Home() {
               ctaClassName="text-[#c9a85f] focus-visible:ring-offset-[#101217]"
             />
             <ImageCard
-              eyebrow="Ninos"
-              title="Semillas que Arden"
-              description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sed mi a sem feugiat aliquet."
+              eyebrow="Niños"
+              title="Semillas que ARDEN"
+              description="Niños que crecen con identidad, fe y propósito, encendidos por el amor de Dios y preparados para impactar el futuro."
               imageSrc={ministerioNinos}
               imageAlt="Ministerio de ninos"
               href="/ministerios#niños"
-              ctaLabel="Conocer mas"
+              ctaLabel="Conocer más"
               className="border border-white/10 bg-white/[0.06]"
               eyebrowClassName="text-[#c9a85f]"
               titleClassName="text-white"
@@ -338,7 +338,7 @@ export default function Home() {
                       href={step.href}
                       className="mt-6 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-primary-700"
                     >
-                      Ver mas
+                      Ver más
                       <ArrowRight className="size-4" />
                     </Link>
                   </CardContent>
@@ -360,9 +360,7 @@ export default function Home() {
               Queremos recibirte en casa.
             </h2>
             <p className="mt-4 text-base leading-8 text-white/72">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-              tempor, erat et bibendum porta, sapien erat tincidunt lorem, vitae
-              interdum justo neque sed arcu.
+            Calle Muñoz Rivera, Edificio #7, Fajardo, PR 00738
             </p>
           </div>
 
