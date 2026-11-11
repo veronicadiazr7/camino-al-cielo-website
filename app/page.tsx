@@ -23,7 +23,7 @@ import { Card, CardContent } from "./components/ui/card";
 
 const serviceHighlights = [
   {
-    label: "Servicio principal",
+    label: "Servicio principal - Fiesta Al Altísimo",
     value: "Domingos",
     detail: "10:00 AM",
     icon: Church,
