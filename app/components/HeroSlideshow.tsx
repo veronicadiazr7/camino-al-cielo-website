@@ -2,21 +2,22 @@
 
 import * as React from "react";
 import Image, { type StaticImageData } from "next/image";
-import cultoAltisimo from "@/lib/images/CultoAltisimoTV.png";
+import casaDeOracion from "@/lib/images/casa-de-oracion.png"
 
-import collage1 from "@/lib/images/collages-slideshow/1.png";
-import collage2 from "@/lib/images/collages-slideshow/2.png";
-import collage3 from "@/lib/images/collages-slideshow/3.png";
-import collage4 from "@/lib/images/collages-slideshow/4.png";
-import collage5 from "@/lib/images/collages-slideshow/5.png";
-import collage6 from "@/lib/images/collages-slideshow/6.png";
-import collage7 from "@/lib/images/collages-slideshow/7.png";
-import collage8 from "@/lib/images/collages-slideshow/8.png";
-import collage9 from "@/lib/images/collages-slideshow/9.png";
-import collage10 from "@/lib/images/collages-slideshow/10.png";
-import collage11 from "@/lib/images/collages-slideshow/11.png";
-import collage12 from "@/lib/images/collages-slideshow/12.png";
-import collage13 from "@/lib/images/collages-slideshow/13.png";
+import collage1 from "@/lib/images/collages-slideshow/desktop-slideshow1.png";
+import collage2 from "@/lib/images/collages-slideshow/desktop-slideshow2.png";
+import collage3 from "@/lib/images/collages-slideshow/desktop-slideshow3.png";
+import collage4 from "@/lib/images/collages-slideshow/desktop-slideshow4.png";
+import collage5 from "@/lib/images/collages-slideshow/desktop-slideshow5.png";
+import collage6 from "@/lib/images/collages-slideshow/desktop-slideshow6.png";
+import collage7 from "@/lib/images/collages-slideshow/desktop-slideshow7.png";
+import collage8 from "@/lib/images/collages-slideshow/desktop-slideshow8.png";
+import collage9 from "@/lib/images/collages-slideshow/desktop-slideshow9.png";
+import collage10 from "@/lib/images/collages-slideshow/desktop-slideshow10.png";
+import collage11 from "@/lib/images/collages-slideshow/desktop-slideshow11.png";
+import collage12 from "@/lib/images/collages-slideshow/desktop-slideshow12.png";
+import collage13 from "@/lib/images/collages-slideshow/desktop-slideshow13.png";
+
 
 import {
   type CarouselApi,
@@ -36,12 +37,18 @@ type HeroSlide = {
 
 type HeroSlideshowProps = {
   slides?: HeroSlide[];
+  mobileSlides?: HeroSlide[];
 };
+
+const defaultMobileSlides: HeroSlide[] = Array.from({ length: 15 }, (_, index) => ({
+  image: `/images/hero-mobile/heromobile-${index + 1}.png`,
+  alt: `Vida en Casa de Oracion Camino Al Cielo - foto ${index + 1}`,
+}));
 
 const defaultSlides: HeroSlide[] = [
   {
-    title: "Bienvenidos a Casa de Oracion",
-    image: cultoAltisimo,
+    title: "Casa de Oración Camino al Cielo",
+    image: casaDeOracion,
   },
   {
     image: collage1,
@@ -74,9 +81,6 @@ const defaultSlides: HeroSlide[] = [
     image: collage6,
   },
   {
-    image: collage13,
-  },
-  {
     image: collage8,
   },
   {
@@ -84,9 +88,41 @@ const defaultSlides: HeroSlide[] = [
   },
 ];
 
-export function HeroSlideshow({ slides = defaultSlides }: HeroSlideshowProps) {
+export function HeroSlideshow({
+  slides = defaultSlides,
+  mobileSlides = defaultMobileSlides,
+}: HeroSlideshowProps) {
+  return (
+    <>
+      <div className="md:hidden">
+        <HeroCarousel slides={mobileSlides} mobile />
+      </div>
+      <div className="hidden md:block">
+        <HeroCarousel slides={slides} />
+      </div>
+    </>
+  );
+}
+
+function HeroCarousel({ slides, mobile = false }: { slides: HeroSlide[]; mobile?: boolean }) {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
+  const dotStart = Math.max(0, Math.min(current - 2, slides.length - 5));
+  const visibleDots = slides.slice(dotStart, dotStart + 5);
+  const [hovered, setHovered] = React.useState(false);
+  const [focused, setFocused] = React.useState(false);
+  const [dragging, setDragging] = React.useState(false);
+
+  React.useEffect(() => {
+    if (!api || slides.length < 2 || hovered || focused || dragging) return;
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const timer = window.setInterval(() => {
+      if (!document.hidden && !reducedMotion.matches) api.scrollNext();
+    }, 3000);
+
+    return () => window.clearInterval(timer);
+  }, [api, slides.length, hovered, focused, dragging, current]);
 
   React.useEffect(() => {
     if (!api) return;
@@ -103,16 +139,27 @@ export function HeroSlideshow({ slides = defaultSlides }: HeroSlideshowProps) {
   }, [api]);
 
   return (
-    <section>
+    <section
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onFocusCapture={() => setFocused(true)}
+      onBlurCapture={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setFocused(false);
+      }}
+      onPointerDown={() => setDragging(true)}
+      onPointerUp={() => setDragging(false)}
+      onPointerCancel={() => setDragging(false)}
+      onLostPointerCapture={() => setDragging(false)}
+    >
       <Carousel
         setApi={setApi}
         opts={{ loop: true }}
       >
-        <CarouselContent className="ml-0 h-[min(45svh,430px)]">
+        <CarouselContent className={mobile ? "ml-0 h-[min(45svh,430px)]" : "ml-0 aspect-[4/1] max-h-[430px]"}>
           {slides.map((slide, index) => (
             <CarouselItem className="h-full pl-0" key={typeof slide.image === "string" ? slide.image : slide.image.src}>
               <div className="relative h-full overflow-hidden bg-black">
-                <Image
+                {mobile && <Image
                   src={slide.image}
                   alt=""
                   aria-hidden="true"
@@ -120,19 +167,14 @@ export function HeroSlideshow({ slides = defaultSlides }: HeroSlideshowProps) {
                   sizes="100vw"
                   className="pointer-events-none scale-110 object-cover blur-2xl brightness-50"
                   priority={index === 0}
-                />
+                />}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <Image
                     src={slide.image}
                     alt={slide.alt?.trim() || slide.title?.trim() || `Casa de Oracion Camino Al Cielo - imagen ${index + 1}`}
-                    width={typeof slide.image === "string" ? 1280 : slide.image.width}
-                    height={typeof slide.image === "string" ? 800 : slide.image.height}
+                    fill
                     sizes="100vw"
-                    className="h-full w-auto max-w-full object-contain object-center"
-                    style={{
-                      maskImage: "linear-gradient(to right, transparent, black 7%, black 93%, transparent)",
-                      WebkitMaskImage: "linear-gradient(to right, transparent, black 7%, black 93%, transparent)",
-                    }}
+                    className={mobile ? "object-contain object-center" : "object-cover object-center"}
                     priority={index === 0}
                   />
                 </div>
@@ -140,7 +182,7 @@ export function HeroSlideshow({ slides = defaultSlides }: HeroSlideshowProps) {
                   <div className="pointer-events-none absolute inset-0 bg-black/45" />
                 )}
                 {(slide.title || slide.subtitle) && (
-                  <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-8">
+                  <div className="absolute inset-x-0 bottom-0 px-5 pb-14 pt-5 text-white sm:px-8 sm:pt-8">
                     {slide.title && (
                       <h2 className="text-xl font-bold sm:text-3xl">{slide.title}</h2>
                     )}
@@ -156,23 +198,34 @@ export function HeroSlideshow({ slides = defaultSlides }: HeroSlideshowProps) {
           ))}
         </CarouselContent>
 
-        <CarouselPrevious className="left-3 border-white/40 bg-black/50 text-white hover:bg-black/70 sm:left-4" />
-        <CarouselNext className="right-3 border-white/40 bg-black/50 text-white hover:bg-black/70 sm:right-4" />
-      </Carousel>
-{/* 
-      <div className="mt-4 flex justify-center gap-2">
-        {slides.map((slide, index) => (
+        {slides.length > 1 && (
+          <>
+            <CarouselPrevious className="left-3 border-white/40 bg-black/50 text-white hover:bg-black/70 sm:left-4" />
+            <CarouselNext className="right-3 border-white/40 bg-black/50 text-white hover:bg-black/70 sm:right-4" />
+          </>
+        )}
+      {slides.length > 1 && (
+      <div className="absolute inset-x-0 bottom-2 z-10 flex justify-center px-2" >
+      <div className="flex max-w-full flex-wrap justify-center rounded-full bg-black/45 px-2 backdrop-blur-sm" role="group" aria-label="Seleccionar imagen">
+        {visibleDots.map((slide, offset) => {
+          const index = dotStart + offset;
+          return (
           <button
-            key={slide.title}
+            key={typeof slide.image === "string" ? slide.image : slide.image.src}
             type="button"
-            aria-label={`Go to slide ${index + 1}`}
-            className={`h-2.5 rounded-full transition-all ${
-              current === index ? "w-6 bg-primary-500" : "w-2.5 bg-muted"
-            }`}
+            aria-label={`Ver imagen ${index + 1}`}
+            aria-current={current === index ? "true" : undefined}
+            className="flex h-8 w-5 shrink-0 items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
             onClick={() => api?.scrollTo(index)}
-          />
-        ))}
-      </div> */}
+          >
+            <span aria-hidden="true" className={`h-1.5 rounded-full transition-all motion-reduce:transition-none ${current === index ? "w-3.5 bg-white" : "w-1.5 bg-white/50 hover:bg-white/80"}`} />
+          </button>
+          );
+        })}
+      </div>
+      </div>
+      )}
+      </Carousel>
     </section>
   );
 }
