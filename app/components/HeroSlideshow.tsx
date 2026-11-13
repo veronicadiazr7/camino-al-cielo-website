@@ -47,7 +47,7 @@ const defaultMobileSlides: HeroSlide[] = Array.from({ length: 15 }, (_, index) =
 
 const defaultSlides: HeroSlide[] = [
   {
-    title: "Casa de Oración Camino al Cielo",
+    title: " ",
     image: casaDeOracion,
   },
   {
@@ -107,8 +107,9 @@ export function HeroSlideshow({
 function HeroCarousel({ slides, mobile = false }: { slides: HeroSlide[]; mobile?: boolean }) {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
-  const dotStart = Math.max(0, Math.min(current - 2, slides.length - 5));
-  const visibleDots = slides.slice(dotStart, dotStart + 5);
+  const dotCount = Math.min(5, slides.length);
+  const activeDot = dotCount ? current % dotCount : 0;
+  const dotStart = current - activeDot;
   const [hovered, setHovered] = React.useState(false);
   const [focused, setFocused] = React.useState(false);
   const [dragging, setDragging] = React.useState(false);
@@ -174,7 +175,7 @@ function HeroCarousel({ slides, mobile = false }: { slides: HeroSlide[]; mobile?
                     alt={slide.alt?.trim() || slide.title?.trim() || `Casa de Oracion Camino Al Cielo - imagen ${index + 1}`}
                     fill
                     sizes="100vw"
-                    className={mobile ? "object-contain object-center" : "object-cover object-center"}
+                    className={mobile ? "object-cover object-center" : "object-cover object-center"}
                     priority={index === 0}
                   />
                 </div>
@@ -207,18 +208,18 @@ function HeroCarousel({ slides, mobile = false }: { slides: HeroSlide[]; mobile?
       {slides.length > 1 && (
       <div className="absolute inset-x-0 bottom-2 z-10 flex justify-center px-2" >
       <div className="flex max-w-full flex-wrap justify-center rounded-full bg-black/45 px-2 backdrop-blur-sm" role="group" aria-label="Seleccionar imagen">
-        {visibleDots.map((slide, offset) => {
-          const index = dotStart + offset;
+        {Array.from({ length: dotCount }, (_, offset) => {
+          const index = (dotStart + offset) % slides.length;
           return (
           <button
-            key={typeof slide.image === "string" ? slide.image : slide.image.src}
+            key={offset}
             type="button"
             aria-label={`Ver imagen ${index + 1}`}
-            aria-current={current === index ? "true" : undefined}
+            aria-current={activeDot === offset ? "true" : undefined}
             className="flex h-8 w-5 shrink-0 items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
             onClick={() => api?.scrollTo(index)}
           >
-            <span aria-hidden="true" className={`h-1.5 rounded-full transition-all motion-reduce:transition-none ${current === index ? "w-3.5 bg-white" : "w-1.5 bg-white/50 hover:bg-white/80"}`} />
+            <span aria-hidden="true" className={`h-1.5 rounded-full transition-all duration-300 ease-in-out motion-reduce:transition-none ${activeDot === offset ? "w-3.5 bg-white" : "w-1.5 bg-white/50 hover:bg-white/80"}`} />
           </button>
           );
         })}
