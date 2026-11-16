@@ -248,7 +248,7 @@ export default function Home() {
         </div>
       </section>
 
-      <PastoresSection />
+      <PastoresSection resumen />
 
       <section className="bg-[#101217] px-6 py-16 text-white sm:px-10 lg:px-16 lg:py-20">
         <div className="mx-auto max-w-6xl">
