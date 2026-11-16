@@ -42,35 +42,6 @@ const values = [
 export default function QuienesSomosPage() {
   return (
     <div className="bg-white">
-      <section className="relative isolate overflow-hidden">
-        <div className="relative h-[72svh] min-h-[560px] w-full">
-          <Image
-            src={cultoAltisimo}
-            alt="Interior de la iglesia"
-            fill
-            priority
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(12,10,35,0.35)_0%,rgba(20,14,49,0.72)_60%,rgba(20,14,49,0.92)_100%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(148,130,255,0.25),transparent_42%)]" />
-        </div>
-
-        <div className="absolute inset-x-0 bottom-0 mx-auto flex w-full max-w-6xl px-6 pb-14 sm:px-10 lg:px-16 lg:pb-20">
-          <div className="max-w-2xl text-white">
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/75">
-              Camino al Cielo Casa de Oración
-            </p>
-            {/* <h1 className="mt-4 text-4xl font-semibold tracking-[-0.05em] sm:text-5xl lg:text-6xl">
-              Fundada en Fe
-            </h1>
-            <p className="mt-4 max-w-xl text-base leading-7 text-white/86 sm:text-lg sm:leading-8">
-              Un refugio para los quebrantados, un hogar para los que buscan, y una
-              comunidad caminando juntos hacia el cielo.
-            </p> */}
-          </div>
-        </div>
-      </section>
-
       <section className="px-6 py-12 sm:px-10 sm:py-16 lg:px-16">
         <div className="grid w-full gap-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
           <Card
@@ -144,7 +115,7 @@ export default function QuienesSomosPage() {
                     <h3 className="mt-5 text-xl font-semibold text-secondary-900">
                       {value.title}
                     </h3>
-                    <p className="mt-3 text-sm leading-7 text-secondary-600">
+                    <p className="mt-3 text-md leading-7 text-secondary-600">
                       {value.description}
                     </p>
                   </CardContent>
