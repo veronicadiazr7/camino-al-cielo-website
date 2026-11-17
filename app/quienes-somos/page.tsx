@@ -11,11 +11,12 @@ import {
   Users,
 } from "lucide-react";
 
-import encuentroComunidad from "@/lib/images/ministerio-jovenes/ministerio-jovenes-2.jpg";
+import congregacionAdorando from "@/lib/images/about/congregacion-adorando.png";
+import abrazoComunidad from "@/lib/images/about/abrazo-comunidad.png";
+import acompanamiento from "@/lib/images/about/acompanamiento.png";
+import adoracion from "@/lib/images/about/adoracion.png";
 import ministerioJovenes from "@/lib/images/ministerio-jovenes/ministerio-jovenes.jpg";
 
-import comunidadNinos from "@/lib/images/ministerio-ninos/ministerio-ninos-1.jpeg";
-import comunidadMujeres from "@/lib/images/ministerio-mujeres/ministerio-mujeres.jpeg";
 import styles from "./about.module.css";
 
 import { PastoresSection } from "../components/PastoresSection";
@@ -66,16 +67,16 @@ export default function QuienesSomosPage() {
               <span aria-hidden="true" className="absolute left-[2%] top-[3%] size-16 rounded-full border border-[#c9a85f]/60 sm:size-24" />
               <span aria-hidden="true" className="absolute bottom-[5%] right-[2%] h-20 w-16 rounded-br-[2rem] bg-primary-700/10" />
               <div className="absolute left-[15%] top-0 h-[47%] w-[53%] overflow-hidden rounded-[1.5rem]">
-                <Image src={encuentroComunidad} alt="Nuestra comunidad compartiendo en la iglesia" fill priority sizes="(min-width: 1024px) 290px, 50vw" className="object-cover" />
+                <Image src={congregacionAdorando} alt="Congregación adorando con las manos levantadas" fill priority sizes="(min-width: 1024px) 290px, 50vw" className="object-cover" />
               </div>
               <div className="absolute right-0 top-[14%] h-[49%] w-[35%] overflow-hidden rounded-[1.5rem] border-4 border-[#fbfaf7]">
-                <Image src={comunidadMujeres} alt="Mujeres de nuestra comunidad compartiendo juntas" fill sizes="(min-width: 1024px) 200px, 35vw" className="object-cover" />
+                <Image src={abrazoComunidad} alt="Un abrazo de apoyo entre miembros de la comunidad" fill sizes="(min-width: 1024px) 200px, 35vw" className="object-cover" />
               </div>
               <div className="absolute bottom-[4%] left-0 z-10 h-[47%] w-[58%] overflow-hidden rounded-[1.5rem] border-4 border-[#fbfaf7]">
-                <Image src={ministerioJovenes} alt="Jóvenes de Camino al Cielo reunidos en comunidad" fill sizes="(min-width: 1024px) 320px, 55vw" className="object-cover" />
+                <Image src={acompanamiento} alt="Dos mujeres acompañándose durante el servicio" fill sizes="(min-width: 1024px) 320px, 55vw" className="object-cover" />
               </div>
               <div className="absolute bottom-0 right-[7%] h-[34%] w-[33%] overflow-hidden rounded-[1.5rem] border-4 border-[#fbfaf7]">
-                <Image src={comunidadNinos} alt="Niños participando en la vida de nuestra iglesia" fill sizes="(min-width: 1024px) 180px, 32vw" className="object-cover" />
+                <Image src={adoracion} alt="Una mujer con las manos levantadas en adoración" fill sizes="(min-width: 1024px) 180px, 32vw" className="object-cover" />
               </div>
               <span aria-hidden="true" className="absolute bottom-[1%] left-[6%] z-20 h-1 w-16 rounded-full bg-[#c9a85f]" />
             </div>
