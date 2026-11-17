@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ScrollTextReveal } from "./components/ScrollTextReveal";
 import { Footer } from "./components/layout/Footer";
 import { NavBar } from "./components/layout/NavBar";
 import "./globals.css";
@@ -21,6 +22,7 @@ export default function RootLayout({
             <NavBar />
           </header>
           <main>{children}</main>
+          <ScrollTextReveal />
           <Footer />
         </div>
       </body>

@@ -8,8 +8,16 @@ export function PastoresSection({ resumen = false }: { resumen?: boolean }) {
       aria-labelledby="pastores-heading"
       className="bg-white px-6 py-16 sm:px-10 lg:px-16 lg:py-24"
     >
-      <div className="mx-auto grid max-w-6xl items-start gap-10 md:grid-cols-2 lg:gap-16">
-        <figure className="overflow-hidden rounded-2xl border border-[#d8cda9] bg-[#f3f1ec]">
+      <div
+        className={resumen
+          ? "mx-auto grid max-w-6xl items-start gap-10 md:grid-cols-2 lg:gap-16"
+          : "mx-auto flow-root max-w-6xl"}
+      >
+        <figure
+          className={`overflow-hidden rounded-2xl border border-[#d8cda9] bg-[#f3f1ec] ${
+            resumen ? "" : "mb-8 md:float-left md:mb-6 md:mr-10 md:w-[42%] lg:mr-12"
+          }`}
+        >
           <Image
             src={pastores}
             alt="Pastores Enrique Figueroa y Amneris Rodríguez"
